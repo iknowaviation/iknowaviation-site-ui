@@ -1,16 +1,25 @@
 /*
  * iKnowAviation Quiz + Results Theme
  * Dark aviation styling for WatuPRO quiz pages and final screens
+ *
  * RESULTS BEHAVIOR:
  *   - Correctly answered question (.watupro-resolved):
  *       selected answer (class*="user-answer") = green pill + ✓
  *       everything else = neutral
  *   - Incorrectly answered question (.watupro-unresolved):
- *       selected answer (class*="user-answer") = blue pill (no check)
- *       correct answer (non-selected) = neutral
+ *       selected answer (class*="user-answer") = red pill + ✕
+ *       correct answer (non-selected) = neutral dark pill
+ *
+ * Notes / Dependencies:
+ * - Uses :has() to hide the "Your comments" wrapper (modern browsers)
+ * - Modal styling targets jQuery UI dialog used by WATU Play
+ * - Both hero-* and quiz-* classnames are supported for legacy markup
  */
 
-/* ============ GLOBAL BASE ============ */
+
+/* ============================================================
+   GLOBAL BASE (QUIZ + RESULTS WRAPPER)
+   ============================================================ */
 
 .ika-quiz-page,
 .ika-results-page {
@@ -36,7 +45,10 @@
   font-weight: 700;
 }
 
-/* ================= HERO SECTION (SHARED) ================= */
+
+/* ============================================================
+   HERO SECTION (SHARED)
+   ============================================================ */
 
 .ika-quiz-page .ika-hero,
 .ika-results-page .ika-hero {
@@ -45,7 +57,7 @@
   background-size: cover;
   background-position: center;
   color: #ffffff;
-  padding-bottom: 3rem; 
+  padding-bottom: 3rem;
 }
 
 .ika-quiz-page .ika-hero::before,
@@ -63,7 +75,6 @@
 }
 
 /* Hero labels and text */
-
 .ika-hero-badge,
 .ika-quiz-badge {
   display: inline-block;
@@ -80,9 +91,10 @@
 .ika-quiz-title {
   margin: 12px 0 4px;
   font-size: 32px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
-/* FORCE hero title + subtitle text to be white */
+/* Force hero title + subtitle text to be white (legacy safety) */
 .ika-hero-title,
 .ika-quiz-title,
 .ika-hero-subtitle,
@@ -90,27 +102,20 @@
   color: #ffffff !important;
 }
 
-.ika-hero-title,
-.ika-quiz-title {
-  text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+.ika-hero-subtitle,
+.ika-quiz-subtitle {
+  font-size: 15px;
 }
 
+/* Tiny mobile safety (kept as-is) */
 @media (max-width: 640px) {
   .ika-hero-title {
     color: #fefefe !important;
   }
 }
 
-.ika-hero-subtitle,
-.ika-quiz-subtitle {
-  font-size: 15px;
-  color: #d7e7ff;
-}
-
-/* ---------- HERO VARIANTS (QUIZ + RESULTS) ----------
-   Replace URLs with your actual image URLs
-*/
-
+/* HERO VARIANTS (QUIZ + RESULTS)
+   Replace URLs with your actual image URLs */
 .ika-quiz-page.hero-jet .ika-hero,
 .ika-results-page.hero-jet .ika-hero {
   background-image: url('https://iknowaviation.com/wp-content/uploads/2025/11/quiz_jetliner_hero.jpg');
@@ -131,7 +136,10 @@
   background-image: url('https://your-site.com/path/to/hero-runway.jpg');
 }
 
-/* ============ QUIZ PAGE STYLING ============ */
+
+/* ============================================================
+   QUIZ PAGE LAYOUT
+   ============================================================ */
 
 .ika-quiz-main {
   padding: 20px 24px 22px;
@@ -147,16 +155,15 @@
 }
 
 .ika-quiz-page .ika-quiz-intro {
-  margin-top: 1.25rem;   /* space between hero and intro text */
+  margin-top: 1.25rem; /* space between hero and intro text */
 }
 
 .ika-quiz-page .quiz-form {
-  padding: 1.5rem 1.75rem 2rem;  /* top, left/right, bottom */
+  padding: 1.5rem 1.75rem 2rem; /* top, left/right, bottom */
   box-sizing: border-box;
 }
 
-/* progress line on quiz page */
-
+/* Progress line */
 .ika-quiz-progress {
   display: flex;
   flex-wrap: wrap;
@@ -181,16 +188,15 @@
   letter-spacing: 0.07em;
 }
 
-/* quiz body wrapper (optional wrapper) */
+/* Quiz body wrapper */
 .ika-quiz-body {
   background: #07152b;
   border-radius: 18px;
   border: 1px solid #18355c;
-  padding: 1.5rem 1.75rem 2rem;  /* top, sides, bottom */
+  padding: 1.5rem 1.75rem 2rem;
 }
 
-/* question text */
-
+/* Question text */
 .ika-quiz-page .watu-question,
 .ika-quiz-page .watu-question-text,
 .ika-quiz-page .question-content h3,
@@ -201,16 +207,17 @@
   color: #ffffff;
 }
 
+
 /* ============================================================
-   PILL-STYLE ANSWER CHOICES FOR WATU (QUIZ PAGE)
-   Uses markup:
+   QUIZ PAGE – PILL-STYLE ANSWER CHOICES (WATU)
+   Expected markup:
    <div class="watupro-question-choice">
      <input type="radio" ...>
      <label ...><span>Answer</span></label>
    </div>
    ============================================================ */
 
-/* 1. Hide radio/checkbox inputs inside Watu choices on QUIZ page */
+/* Hide radio/checkbox inputs */
 .ika-quiz-page .watupro-question-choice input[type="radio"],
 .ika-quiz-page .watupro-question-choice input[type="checkbox"] {
   position: absolute;
@@ -218,7 +225,7 @@
   pointer-events: none;
 }
 
-/* 2. Base pill styling on QUIZ page */
+/* Base pill styling */
 .ika-quiz-page .watupro-question-choice label {
   display: block;
   background: #0b1c34;
@@ -233,12 +240,11 @@
   transition: all 0.18s ease;
 }
 
-/* inner span */
 .ika-quiz-page .watupro-question-choice label span {
   display: inline-block;
 }
 
-/* 3. Hover effect on QUIZ page */
+/* Hover */
 .ika-quiz-page .watupro-question-choice label:hover {
   background: #112544;
   border-color: #2d5ca1;
@@ -246,7 +252,7 @@
   box-shadow: 0 4px 14px rgba(0, 123, 255, 0.25);
 }
 
-/* 4. Selected state (radio or checkbox checked) on QUIZ page */
+/* Selected */
 .ika-quiz-page .watupro-question-choice input[type="radio"]:checked + label,
 .ika-quiz-page .watupro-question-choice input[type="checkbox"]:checked + label {
   background: #0d47a1;
@@ -256,13 +262,13 @@
   transform: translateY(-2px);
 }
 
-/* 5. Stronger hover when already selected on QUIZ page */
+/* Selected hover */
 .ika-quiz-page .watupro-question-choice input[type="radio"]:checked + label:hover,
 .ika-quiz-page .watupro-question-choice input[type="checkbox"]:checked + label:hover {
   background: #0c3c8c;
 }
 
-/* Remove bullets / spacing just in case any lists are used */
+/* Remove bullets / spacing */
 .ika-quiz-page .watu-answers,
 .ika-quiz-page .ika-quiz-body ul,
 .ika-quiz-page .ika-quiz-body ol {
@@ -276,7 +282,10 @@
   margin-bottom: 12px;
 }
 
-/* text / number inputs + comments textarea */
+
+/* ============================================================
+   QUIZ PAGE – TEXT/NUMBER INPUTS + COMMENTS TEXTAREA
+   ============================================================ */
 
 .ika-quiz-body input[type="text"],
 .ika-quiz-body input[type="number"],
@@ -292,16 +301,14 @@
   box-sizing: border-box;
 }
 
-/* Optional: hide comments box */
-/*
+/* Optional: hide comments box (legacy toggle)
 .ika-quiz-page p:has(.watupro-user-feedback),
 .ika-quiz-page .watupro-user-feedback {
   display: none !important;
 }
 */
 
-/* error messages */
-
+/* Errors */
 .ika-quiz-body .watu-error,
 .ika-quiz-body .error {
   color: #ffb4b4;
@@ -309,7 +316,10 @@
   margin-top: 6px;
 }
 
-/* quiz buttons */
+
+/* ============================================================
+   QUIZ PAGE – BUTTONS (WATU INPUT BUTTONS)
+   ============================================================ */
 
 .ika-quiz-actions,
 .ika-quiz-page .watupro_buttons {
@@ -319,8 +329,7 @@
   gap: 10px;
 }
 
-/* Watu buttons – shared style */
-
+/* Shared button base */
 .ika-quiz-page .watupro_buttons input[type="submit"],
 .ika-quiz-page .watupro_buttons input[type="button"],
 .ika-quiz-body input[type="submit"],
@@ -338,19 +347,16 @@
   border: 1px solid transparent;
   text-decoration: none;
   cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease,
-              transform 0.1s ease;
+  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
 }
 
-/* primary quiz button – solid blue (no gradient) */
-
+/* Primary (solid blue) */
 .ika-quiz-page .watupro_buttons input[type="submit"],
 .ika-quiz-page .watupro_buttons input[type="button"].watupro-submit-button,
 .ika-quiz-body input[type="submit"],
 .ika-quiz-body .watu-submit {
   background: #007bff;
   color: #ffffff;
-  /* box-shadow: 0 8px 22px rgba(0, 123, 255, 0.45); */
 }
 
 .ika-quiz-page .watupro_buttons input[type="submit"]:hover,
@@ -361,8 +367,7 @@
   transform: translateY(-1px);
 }
 
-/* secondary quiz buttons */
-
+/* Secondary */
 .ika-quiz-body .watu-next,
 .ika-quiz-body .watu-prev {
   background: transparent;
@@ -375,102 +380,23 @@
   background: #041020;
 }
 
+
 /* ============================================================
-   RESULTS SCREEN – PILL STYLING
-   Uses question-level classes:
-   - .watupro-resolved   → question answered correctly
-   - .watupro-unresolved → question answered incorrectly
-   And within them, class*="user-answer" on the selected answer.
+   RESULTS PAGE – LAYOUT + COMPONENTS
    ============================================================ */
-
-/* Base pill look for answer rows on results screen */
-.ika-results-page .ika-answer-section .show-question-choices ul,
-.ika-results-page .ika-answer-section ul,
-.ika-results-page .ika-answer-section ol {
-  padding-left: 0;
-  margin-left: 0;
-}
-
-/* RESULTS PAGE – REMOVE EXTRA BLANK SPACE ABOVE HERO */
-.ika-results-page {
-  margin-top: 0;       /* was 40px via the shared rule */
-}
-
-.ika-results-page .ika-answer-section .show-question-choices li,
-.ika-results-page .ika-answer-section li {
-  list-style: none;
-  margin-bottom: 10px;
-  background: #0b1c34;
-  border: 1px solid #18355c;
-  padding: 12px 16px 12px 42px; /* space for icon on green pills */
-  border-radius: 12px;
-  color: #e4eeff;
-  font-size: 14px;
-  line-height: 1.4;
-  position: relative;
-}
-
-/* Default icon slot (empty) */
-.ika-results-page .ika-answer-section .show-question-choices li::before,
-.ika-results-page .ika-answer-section li::before {
-  content: "";
-  position: absolute;
-  left: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 15px;
-  font-weight: 700;
-}
-
-/* ---------- CORRECTLY ANSWERED QUESTION ----------
-   Container:   .watupro-resolved
-   Selected answer: li[class*="user-answer"]
-   → Green pill + ✓
-*/
-.ika-results-page .watupro-resolved .show-question-choices li[class*="user-answer"] {
-  background: #0b3a24;
-  border-color: #27ae60;
-  color: #eafff3;
-}
-
-.ika-results-page .watupro-resolved .show-question-choices li[class*="user-answer"]::before {
-  content: "✓";
-  color: #a4f8c2;
-}
-
-/* ---------- INCORRECTLY ANSWERED QUESTION ----------
-   Container:   .watupro-unresolved
-   Selected wrong answer: li[class*="user-answer"]
-   → Blue pill, no checkmark
-   Correct answer (non-selected) stays as neutral dark pill
-*/
-.ika-results-page .watupro-unresolved .show-question-choices li[class*="user-answer"] {
-  background: #7a0f1a;        /* deep aviation red */
-  border-color: #d64242;       /* brighter red outline */
-  color: #ffffff;
-}
-
-/* New: red X icon on the left, like the green ✓ for correct answers */
-.ika-results-page .watupro-unresolved .show-question-choices li[class*="user-answer"]::before {
-  content: "✕";              /* red X symbol */
-  color: #fecaca;             /* soft light red to contrast the dark pill */
-}
-
-/* ============ RESULTS PAGE LAYOUT (MATCHING THE THEME) ============ */
 
 .ika-results-main {
   padding: 22px 24px 20px;
   background: #020818;
 }
 
-/* RESULTS PAGE – PREVENT TEXT OVERLAP IN MAIN CONTENT */
+/* Prevent overlap / tighten baseline */
 .ika-results-main,
 .ika-results-main * {
   line-height: 1.4;
 }
 
-/* stats row */
-
+/* Stats row */
 .ika-stats-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -509,8 +435,7 @@
   margin-top: 4px;
 }
 
-/* CTA buttons on results page */
-
+/* CTA buttons (results page components) */
 .ika-btn-row {
   display: flex;
   flex-wrap: wrap;
@@ -529,11 +454,8 @@
   text-decoration: none;
   cursor: pointer;
   border: 1px solid transparent;
-  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease,
-              transform 0.1s ease;
+  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
 }
-
-/* primary – solid blue */
 
 .ika-btn-primary {
   background: #007bff;
@@ -546,8 +468,6 @@
   transform: translateY(-1px);
 }
 
-/* secondary – outlined */
-
 .ika-btn-secondary {
   background: transparent;
   color: #e4eeff;
@@ -558,8 +478,7 @@
   background: #07152b;
 }
 
-/* social share row */
-
+/* Social share row */
 .ika-share-row {
   display: flex;
   flex-wrap: wrap;
@@ -576,8 +495,7 @@
   color: #c1d4ff;
 }
 
-/* recommended next steps */
-
+/* Recommended next steps */
 .ika-next-steps {
   background: #07152b;
   border-radius: 16px;
@@ -593,8 +511,7 @@
   padding-left: 0;
 }
 
-/* answers section */
-
+/* Answers section wrapper */
 .ika-answer-section {
   background: #020818;
   padding-top: 4px;
@@ -620,7 +537,92 @@
   color: #9db0d6;
 }
 
-/* ============ RESPONSIVE ============ */
+
+/* ============================================================
+   RESULTS SCREEN – ANSWER PILL STYLING
+   Uses question-level classes:
+   - .watupro-resolved   → question answered correctly
+   - .watupro-unresolved → question answered incorrectly
+   And within them, class*="user-answer" on the selected answer.
+   ============================================================ */
+
+.ika-results-page .ika-answer-section .show-question-choices ul,
+.ika-results-page .ika-answer-section ul,
+.ika-results-page .ika-answer-section ol {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.ika-results-page .ika-answer-section .show-question-choices li,
+.ika-results-page .ika-answer-section li {
+  list-style: none;
+  margin-bottom: 10px;
+  background: #0b1c34;
+  border: 1px solid #18355c;
+  padding: 12px 16px 12px 42px; /* space for icon slot */
+  border-radius: 12px;
+  color: #e4eeff;
+  font-size: 14px;
+  line-height: 1.4;
+  position: relative;
+}
+
+/* Default icon slot */
+.ika-results-page .ika-answer-section .show-question-choices li::before,
+.ika-results-page .ika-answer-section li::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* Correct: green pill + ✓ */
+.ika-results-page .watupro-resolved .show-question-choices li[class*="user-answer"] {
+  background: #0b3a24;
+  border-color: #27ae60;
+  color: #eafff3;
+}
+
+.ika-results-page .watupro-resolved .show-question-choices li[class*="user-answer"]::before {
+  content: "✓";
+  color: #a4f8c2;
+}
+
+/* Incorrect: red pill + ✕ (selected wrong answer only) */
+.ika-results-page .watupro-unresolved .show-question-choices li[class*="user-answer"] {
+  background: #7a0f1a;
+  border-color: #d64242;
+  color: #ffffff;
+}
+
+.ika-results-page .watupro-unresolved .show-question-choices li[class*="user-answer"]::before {
+  content: "✕";
+  color: #fecaca;
+}
+
+
+/* ============================================================
+   RESULTS PAGE – MATCH QUESTION TEXT SIZE TO QUIZ QUESTIONS
+   (and remove italic from global h3)
+   ============================================================ */
+
+.ika-results-page .ika-results-main h3,
+.ika-results-page .ika-answer-section h3,
+.ika-results-page .ika-results-main .question-text,
+.ika-results-page .ika-answer-section .question-text {
+  font-size: 15px !important;
+  font-weight: 600;
+  line-height: 1.4;
+  font-style: normal;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
 
 @media (max-width: 640px) {
   .ika-quiz-page,
@@ -653,17 +655,18 @@
   }
 }
 
+
 /* ============================================================
-   REMOVE "YOUR COMMENTS" BOX + CLEAN UP LEFTOVER SPACING
+   QUIZ PAGE – REMOVE "YOUR COMMENTS" BOX + CLEAN UP SPACING
    (GLOBAL FOR ALL QUIZZES)
    ============================================================ */
 
-/* Hide the textarea itself */
+/* Hide the textarea */
 .ika-quiz-page .watupro-user-feedback {
   display: none !important;
 }
 
-/* Hide the entire paragraph wrapper that contains the label + textarea */
+/* Hide wrapper that contains label + textarea */
 .ika-quiz-page p:has(.watupro-user-feedback) {
   display: none !important;
   margin: 0 !important;
@@ -680,41 +683,30 @@
   margin-top: 10px !important;
 }
 
-/* RESULTS PAGE – MATCH QUESTION TEXT SIZE TO QUIZ QUESTIONS */
-
-/* Question headings and question text inside the results content */
-.ika-results-page .ika-results-main h3,
-.ika-results-page .ika-answer-section h3,
-.ika-results-page .ika-results-main .question-text,
-.ika-results-page .ika-answer-section .question-text {
-  font-size: 15px !important;   /* match quiz question size */
-  font-weight: 600;
-  line-height: 1.4;
-  font-style: normal;           /* remove the italic from the global h3 rule */
-}
 
 /* ============================================================
-   RESULTS PAGE – REMOVE TOP GAP ABOVE HERO CARD
+   RESULTS PAGE – FIXES / TEMPLATE-SPECIFIC OVERRIDES (FRAGILE)
    ============================================================ */
 
-/* Pull the results card up under the page title */
+/* Remove top gap above hero card on results (kept as current behavior)
+   NOTE: This overrides the mobile margin rule above due to !important. */
 .ika-results-page {
-  margin: 0 auto 40px !important;  /* no top gap, keep bottom spacing */
+  margin: 0 auto 40px !important;
 }
 
-/* Also remove any section padding/margin from the quiz single template */
+/* Elementor template-specific override (Elementor IDs can change) */
 body.single-quiz .elementor-640 .elementor-element-0d1d4aa {
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
 
-/* Many quiz plugins output a top <p>&nbsp;</p> spacer inside the results wrapper.
-   This removes that first empty paragraph so the hero hugs the top of the card. */
+/* Remove a common first empty paragraph spacer inside the results wrapper */
 .ika-results-page > p:first-of-type {
   display: none !important;
   margin: 0 !important;
   padding: 0 !important;
 }
+
 
 /* ============================================================
    RESULTS PAGE – STYLE "TAKE ANOTHER QUIZ" AS PRIMARY BUTTON
@@ -727,8 +719,8 @@ body.single-quiz .elementor-640 .elementor-element-0d1d4aa {
   justify-content: center;
   padding: 10px 24px;
   border-radius: 999px;
-  background: #1E5BBF;               /* primary blue */
-  color: #ffffff !important;         /* white text */
+  background: #1E5BBF;
+  color: #ffffff !important;
   text-decoration: none;
   border: none;
   font-family: "Montserrat", system-ui, sans-serif;
@@ -741,44 +733,40 @@ body.single-quiz .elementor-640 .elementor-element-0d1d4aa {
   transition: all 0.18s ease-out;
 }
 
-/* Hover state */
 .ika-results-page a[href*="/quiz"]:hover {
   background: #174A99;
   transform: translateY(-1px);
   box-shadow: 0 14px 32px rgba(15, 23, 42, 0.35);
 }
 
-/* =========================================
-   WATU Play – Modal Styling (with badges)
-   ========================================= */
 
-/* Base dialog for the WATU Play modal
-   (gold ring, subtle gold glow, rounded corners, dark background) */
+/* ============================================================
+   WATU PLAY – MODAL STYLING (BADGES + LEVELS)
+   ============================================================ */
+
+/* Base dialog (gold ring + subtle glow) */
 .ui-dialog[aria-describedby="watuproplay-modal"] {
   border-radius: 14px;
-  border: 2px solid #FFD373;  /* gold ring */
+  border: 2px solid #FFD373;
   background-color: rgba(13, 19, 31, 0.96);
   overflow: hidden;
   box-shadow:
-    0 0 12px rgba(255, 211, 115, 0.55),  /* soft gold glow */
-    0 10px 30px rgba(0, 0, 0, 0.35);     /* depth shadow */
+    0 0 12px rgba(255, 211, 115, 0.55),
+    0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
-/* Make sure inner content doesn’t override background */
+/* Ensure inner content doesn’t override background */
 .ui-dialog[aria-describedby="watuproplay-modal"] #watuproplay-modal {
   background-color: transparent;
 }
 
-/* -----------------------------------------
-   Title bar – "Achievement Unlocked!" + X
-   ----------------------------------------- */
-
+/* Title bar */
 .ui-dialog[aria-describedby="watuproplay-modal"] .ui-dialog-titlebar {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 2.5rem 0.6rem 1.25rem; /* room for X on the right */
+  padding: 0.75rem 2.5rem 0.6rem 1.25rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   background: transparent;
 }
@@ -787,12 +775,12 @@ body.single-quiz .elementor-640 .elementor-element-0d1d4aa {
 .ui-dialog[aria-describedby="watuproplay-modal"] .ui-dialog-title {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #FFD373; /* gold */
+  color: #FFD373;
   margin: 0;
   padding: 0;
 }
 
-/* Close button – visible X with spacing */
+/* Close button */
 .ui-dialog[aria-describedby="watuproplay-modal"] .ui-dialog-titlebar-close {
   position: absolute;
   right: 0.85rem;
@@ -811,7 +799,7 @@ body.single-quiz .elementor-640 .elementor-element-0d1d4aa {
   display: none;
 }
 
-/* Custom X via CSS */
+/* Custom X */
 .ui-dialog[aria-describedby="watuproplay-modal"] .ui-dialog-titlebar-close::before {
   content: "×";
   display: block;
@@ -825,13 +813,19 @@ body.single-quiz .elementor-640 .elementor-element-0d1d4aa {
   opacity: 0.7;
 }
 
-/* IKA – Watu Play "Achievement Unlocked" modal layout */
+/* Make sure the jQuery UI title bar doesn't get cramped (global safe) */
+.ui-dialog .ui-dialog-titlebar {
+  line-height: 1.2;
+}
+
+/* Modal layout */
 #watuproplay-modal .ika-badge-modal-inner {
   padding: 1.5rem 1.75rem;
   text-align: center;
+  padding-top: 18px;
+  padding-bottom: 20px;
 }
 
-/* Header block inside modal body */
 #watuproplay-modal .ika-badge-modal-header {
   margin-bottom: 1.25rem;
 }
@@ -847,13 +841,21 @@ body.single-quiz .elementor-640 .elementor-element-0d1d4aa {
   opacity: 0.85;
 }
 
-/* Section labels ("New Level Achieved", "New Badges Earned") */
+#watuproplay-modal .ika-badge-modal-subheading--primary {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 4px 0 10px 0;
+}
+
+/* Section labels */
 #watuproplay-modal .ika-badge-modal-section-label {
   font-size: 0.95rem;
   font-weight: 600;
   margin: 1.1rem 0 0.5rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  margin-bottom: 14px;
 }
 
 /* Lists */
@@ -862,6 +864,7 @@ body.single-quiz .elementor-640 .elementor-element-0d1d4aa {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.75rem 1rem;
+  margin-top: 6px;
 }
 
 /* Items */
@@ -881,42 +884,15 @@ body.single-quiz .elementor-640 .elementor-element-0d1d4aa {
   margin-bottom: 0.4rem;
 }
 
+#watuproplay-modal .ika-badge-modal-media img {
+  width: 74px;
+  height: 74px;
+  object-fit: contain;
+  display: block;
+}
+
 /* Titles */
 #watuproplay-modal .ika-badge-modal-title {
   font-size: 0.85rem;
   line-height: 1.25;
-}
-
-/* Make sure the jQuery UI title bar doesn't get cramped */
-.ui-dialog .ui-dialog-titlebar {
-  line-height: 1.2;
-}
-
-#watuproplay-modal .ika-badge-modal-subheading--primary{
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.35;
-  margin: 4px 0 10px 0;
-}
-#watuproplay-modal .ika-badge-modal-media img{
-  width: 74px;
-  height: 74px;
-  object-fit: contain;
-  display:block;
-}
-
-/* Add spacing between section headers and items (badges + levels) */
-#watuproplay-modal .ika-badge-modal-section-label {
-  margin-bottom: 14px; /* space before images */
-}
-
-/* Add breathing room above badge/level grids */
-#watuproplay-modal .ika-badge-modal-list {
-  margin-top: 6px;
-}
-
-/* Optional: slightly more vertical balance inside the modal */
-#watuproplay-modal .ika-badge-modal-inner {
-  padding-top: 18px;
-  padding-bottom: 20px;
 }
