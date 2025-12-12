@@ -1,5 +1,48 @@
 /* =========================================================
-   GLOBAL / SHARED STYLES
+   iKnowAviation – MASTER (Global / Shared Styles)
+   Used site-wide: Elementor, UsersWP, UI components, missions, modals
+   ========================================================= */
+
+
+/* ==========================================================================
+   SECTION 0 — COLOR TOKENS & HELPERS (GLOBAL DESIGN SYSTEM)
+   ========================================================================== */
+
+:root {
+  --ika-navy-900: #0D131F;
+  --ika-navy-800: #1A2740;
+  --ika-blue-600: #006699;
+  --ika-blue-400: #62A9F2;
+  --ika-amber-300: #FFD373;
+  --ika-surface-100: #F5F7FA;
+  --ika-surface-50: #F9FAFB;
+  --ika-border-soft: #E5EDF5;
+  --ika-border-subtle: #CBD5E1;
+  --ika-text-main: #111827;
+  --ika-text-muted: #6B7280;
+  --ika-white: #ffffff;
+}
+
+/* Utility helpers */
+.ika-hero-surface  { background-color: var(--ika-surface-100); }
+.ika-hero-accent   { color: var(--ika-amber-300); }
+.ika-hero-border   { border-color: var(--ika-border-soft); }
+.ika-text-main     { color: var(--ika-text-main); }
+.ika-text-muted    { color: var(--ika-text-muted); }
+.ika-tab-active-bg { background-color: rgba(0, 102, 153, 0.12); }
+.ika-tab-hover-bg  { background-color: rgba(0, 102, 153, 0.06); }
+
+/* NOTE: The original .ika-hero-bg line in the provided file was truncated/invalid CSS.
+   Keep this as a placeholder and define your final gradient later if needed. */
+/*
+.ika-hero-bg {
+  background: radial-gradient(circle at 0 0, var(--ika-blue-400) 0, var(--ika-navy-800) 45%, var(--ika-navy-900) 100%);
+}
+*/
+
+
+/* =========================================================
+   GLOBAL / SHARED BASICS
    ========================================================= */
 
 /* SAFE TWEAK ZONE:
@@ -31,7 +74,11 @@ img {
   color: #6B7280;
 }
 
-/* Global button reset for Elementor buttons */
+
+/* =========================================================
+   ELEMENTOR – GLOBAL BUTTON STYLING
+   ========================================================= */
+
 .elementor-button {
   border-radius: 999px;
   font-family: "Montserrat", system-ui, sans-serif;
@@ -44,7 +91,6 @@ img {
   transition: all 0.18s ease-out;
 }
 
-/* Button hover defaults */
 .elementor-button:hover {
   transform: translateY(-1px);
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.22);
@@ -87,11 +133,16 @@ img {
   padding-right: 0;
   box-shadow: none;
 }
+
 .ika-btn-link .elementor-button .elementor-button-icon {
   margin-left: 6px;
 }
 
-/* Global hero layout helpers */
+
+/* =========================================================
+   HERO LAYOUT HELPERS (GENERAL)
+   ========================================================= */
+
 .hero-large {
   padding: 80px 0 72px;
 }
@@ -100,19 +151,23 @@ img {
   align-items: center;
 }
 
-/* Card component (shared across site) */
+
+/* =========================================================
+   CARD COMPONENT (SHARED ACROSS SITE)
+   ========================================================= */
+
 .ika-card {
   background-color: #FFFFFF;
   border-radius: 16px;
   padding: 24px 24px 22px;
   border: 1px solid rgba(148, 163, 184, 0.35);
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-  transition: transform 0.18s ease-out, box-shadow 0.18s ease-out,
-    border-color 0.18s ease-out;
+  transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, border-color 0.18s ease-out;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
+
 .ika-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
@@ -124,12 +179,15 @@ img {
   margin-bottom: 16px;
 }
 
-/* SAFE TWEAK ZONE – DARK SECTION COLORS:
-   - Change background / text colors for dark sections here.
-*/
+
+/* =========================================================
+   DARK SECTION COLORS (SAFE TWEAK ZONE)
+   ========================================================= */
+
 .ika-dark {
   background-color: #0D1B2A;
 }
+
 .ika-dark h1,
 .ika-dark h2,
 .ika-dark h3,
@@ -138,10 +196,12 @@ img {
 .ika-dark h6 {
   color: #FFFFFF;
 }
+
 .ika-dark p,
 .ika-dark li {
   color: #E5EDF5;
 }
+
 .ika-dark .muted {
   color: #A9B7C6;
 }
@@ -150,11 +210,16 @@ img {
 .ika-dark a {
   color: #62A9F2;
 }
+
 .ika-dark a:hover {
   color: #93C5FD;
 }
 
-/* FORM STYLING – GENERIC (for Elementor or other forms using .ika-form) */
+
+/* =========================================================
+   FORM STYLING – GENERIC (.ika-form)
+   ========================================================= */
+
 .ika-form .form-row,
 .ika-form .form-group {
   margin-bottom: 14px;
@@ -186,11 +251,10 @@ img {
   font-family: "Open Sans", system-ui, sans-serif;
   color: #111827;
   background-color: #FFFFFF;
-  transition: border-color 0.15s ease-out, box-shadow 0.15s ease-out,
-    background-color 0.15s ease-out;
+  transition: border-color 0.15s ease-out, box-shadow 0.15s ease-out, background-color 0.15s ease-out;
 }
 
-/* Form focus */
+/* Focus */
 .ika-form input:focus,
 .ika-form select:focus,
 .ika-form textarea:focus {
@@ -205,17 +269,23 @@ img {
 .ika-form .has-error textarea {
   border-color: #DC2626;
 }
+
 .ika-form .error-message {
   margin-top: 4px;
   font-size: 12px;
   color: #DC2626;
 }
 
-/* FOOTER SOCIAL ICONS (if used globally) */
+
+/* =========================================================
+   FOOTER SOCIAL ICONS (GLOBAL)
+   ========================================================= */
+
 .footer-social-icons {
   display: flex;
   gap: 10px;
 }
+
 .footer-social-icons a {
   width: 32px;
   height: 32px;
@@ -227,18 +297,20 @@ img {
   color: #6B7280;
   transition: all 0.15s ease-out;
 }
+
 .footer-social-icons a:hover {
   color: #111827;
   border-color: #111827;
   transform: translateY(-1px);
 }
 
+
 /* =========================================================
    USERSWP – GLOBAL FORM & BUTTON STYLING
    (Login, Register, Account, etc.)
    ========================================================= */
 
-/* Make sure all UsersWP containers use border-box */
+/* Border-box safety */
 .uwp-login-form *,
 .uwp-registration-form *,
 .uwp-account-form *,
@@ -295,8 +367,7 @@ img {
   font-family: "Open Sans", system-ui, sans-serif;
   color: #111827;
   background-color: #FFFFFF;
-  transition: border-color 0.15s ease-out, box-shadow 0.15s ease-out,
-    background-color 0.15s ease-out;
+  transition: border-color 0.15s ease-out, box-shadow 0.15s ease-out, background-color 0.15s ease-out;
 }
 
 /* Focus state */
@@ -321,6 +392,7 @@ img {
   border-radius: 4px;
   border: 1px solid #D1D9E6;
 }
+
 .uwp-login-form .form-check-label,
 .uwp-registration-form .form-check-label,
 .uwp-account-form .form-check-label,
@@ -355,6 +427,7 @@ img {
   transition: all 0.18s ease-out;
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
 }
+
 .uwp-login-form button[type="submit"]:hover,
 .uwp-registration-form button[type="submit"]:hover,
 .uwp-account-form button[type="submit"]:hover,
@@ -371,10 +444,12 @@ img {
 .uwp-footer-links {
   margin-top: 16px;
 }
+
 .uwp-footer-links .uwp-footer-link {
   display: inline-block;
   margin-right: 12px;
 }
+
 .uwp-footer-links .uwp-footer-link a {
   font-size: 13px;
   font-weight: 500;
@@ -383,6 +458,7 @@ img {
   border-bottom: 1px solid transparent;
   transition: color 0.15s ease-out, border-color 0.15s ease-out;
 }
+
 .uwp-footer-links .uwp-footer-link a:hover {
   color: #62A9F2;
 }
@@ -396,36 +472,10 @@ img {
   color: #98A7B6;
 }
 
-/* ==========================================================================
-   SECTION 0 — COLOR TOKENS & HELPERS (GLOBAL DESIGN SYSTEM)
-   ========================================================================== */
-:root {
-  --ika-navy-900:#0D131F;
-  --ika-navy-800:#1A2740;
-  --ika-blue-600:#006699;
-  --ika-blue-400:#62A9F2;
-  --ika-amber-300:#FFD373;
-  --ika-surface-100:#F5F7FA;
-  --ika-surface-50:#F9FAFB;
-  --ika-border-soft:#E5EDF5;
-  --ika-border-subtle:#CBD5E1;
-  --ika-text-main:#111827;
-  --ika-text-muted:#6B7280;
-  --ika-white:#ffffff;
-}
 
-.ika-hero-bg       { background: radial-gradient(circle at 0 0, ...ue-400) 0, var(--ika-navy-800) 45%, var(--ika-navy-900) 100%); }
-.ika-hero-surface  { background-color: var(--ika-surface-100); }
-.ika-hero-accent   { color: var(--ika-amber-300); }
-.ika-hero-border   { border-color: var(--ika-border-soft); }
-.ika-text-main     { color: var(--ika-text-main); }
-.ika-text-muted    { color: var(--ika-text-muted); }
-.ika-tab-active-bg { background-color: rgba(0,102,153,.12); }
-.ika-tab-hover-bg  { background-color: rgba(0,102,153,.06); }
-
-/* =========================================
-   iKnowAviation – XP Leaderboard
-   ========================================= */
+/* =========================================================
+   IKA – XP LEADERBOARD
+   ========================================================= */
 
 .ika-leaderboard {
   margin-top: 1.5rem;
@@ -492,9 +542,10 @@ img {
   color: #94A3B8;
 }
 
-/* =========================================
-   iKnowAviation – XP Progress Bar
-   ========================================= */
+
+/* =========================================================
+   IKA – XP PROGRESS BAR
+   ========================================================= */
 
 .ika-xp-progress-wrapper {
   margin-top: 1.5rem;
@@ -554,8 +605,9 @@ img {
   color: #E5ECF5;
 }
 
+
 /* ============================================================
-   iKnowAviation – Achievement / Badge / Rank-Up Modal
+   IKA – ACHIEVEMENT / BADGE / RANK-UP MODALS
    Shared styling for:
    - WATU Play badge modal (#watuproplay-modal)
    - Rank-up modal (.ika-rankup-dialog / #ika-rankup-modal)
@@ -592,29 +644,31 @@ img {
   color: #FFD373;
 }
 
-/* Close button */
+/* Close button (shared) */
 .ui-dialog[aria-describedby="watuproplay-modal"] .ui-dialog-titlebar-close,
 .ika-rankup-dialog .ui-dialog-titlebar-close {
   position: absolute;
   top: 50%;
   right: 0.6rem;
   transform: translateY(-50%);
-  width: 22px;
-  height: 22px;
-  border-radius: 999px;
-  border: none;
-  background: rgba(15, 23, 42, 0.9);
+  width: 22px !important;
+  height: 22px !important;
+  border-radius: 999px !important;
+  border: none !important;
+  background: rgba(15, 23, 42, 0.9) !important;
   cursor: pointer;
-  padding: 0;
+  padding: 0 !important;
+  box-shadow: none !important;
 }
 
 .ui-dialog[aria-describedby="watuproplay-modal"] .ui-dialog-titlebar-close::before,
 .ika-rankup-dialog .ui-dialog-titlebar-close::before {
-  content: '×';
+  content: "×";
   display: block;
   line-height: 22px;
   text-align: center;
   font-size: 16px;
+  font-weight: 600;
   color: #E5ECF5;
 }
 
@@ -680,49 +734,11 @@ img {
   color: #E5ECF5;
 }
 
-/* =========================================
-   Shared Achievement Modal Close Button
-   (badge + rank-up)
-   ========================================= */
 
-/* Target BOTH dialogs */
-.ui-dialog[aria-describedby="watuproplay-modal"] .ui-dialog-titlebar-close,
-.ika-rankup-dialog .ui-dialog-titlebar-close {
-  position: absolute;
-  top: 50%;
-  right: 0.6rem;
-  transform: translateY(-50%);
-  width: 22px !important;
-  height: 22px !important;
-  border-radius: 999px !important;
-  border: none !important;
-  background: rgba(15, 23, 42, 0.9) !important;
-  cursor: pointer;
-  padding: 0 !important;
-  box-shadow: none !important;
-}
+/* =========================================================
+   DAILY MISSIONS – iKnowAviation
+   ========================================================= */
 
-/* The “X” glyph itself */
-.ui-dialog[aria-describedby="watuproplay-modal"] .ui-dialog-titlebar-close::before,
-.ika-rankup-dialog .ui-dialog-titlebar-close::before {
-  content: '×';
-  display: block;
-  line-height: 22px;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 600;
-  color: #E5ECF5;
-}
-
-/* Hide default jQuery UI icon/text */
-.ui-dialog[aria-describedby="watuproplay-modal"] .ui-dialog-titlebar-close .ui-button-text,
-.ui-dialog[aria-describedby="watuproplay-modal"] .ui-dialog-titlebar-close .ui-icon,
-.ika-rankup-dialog .ui-dialog-titlebar-close .ui-button-text,
-.ika-rankup-dialog .ui-dialog-titlebar-close .ui-icon {
-  display: none !important;
-}
-
-/* Daily Missions – iKnowAviation */
 .ika-dm-wrapper {
   background: #0D131F;
   border-radius: 12px;
@@ -812,36 +828,7 @@ img {
   color: #FFD373;
 }
 
-/* Daily Missions – Stats row */
-.ika-dm-stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  margin-bottom: 14px;
-}
-
-.ika-dm-stat {
-  background: rgba(15, 24, 40, 0.9);
-  border-radius: 10px;
-  padding: 8px 10px;
-  border: 1px solid rgba(152, 167, 182, 0.35);
-}
-
-.ika-dm-stat-label {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #98A7B6;
-  margin-bottom: 2px;
-}
-
-.ika-dm-stat-value {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #F5F7FA;
-}
-
-/* Daily Missions – Stats row */
+/* Daily Missions – Stats row (kept as effective behavior: 4 columns) */
 .ika-dm-stats {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -870,15 +857,21 @@ img {
   color: #F5F7FA;
 }
 
-/* Avatar level ring + badge */
+
+/* =========================================================
+   AVATAR LEVEL RING + LEVEL BADGE
+   ========================================================= */
+
 .ika-level-avatar-wrapper {
   position: relative;
   display: inline-block;
   border-radius: 999px;
   padding: 3px;
-  background: radial-gradient(circle at 30% 0,
-      rgba(98, 169, 242, 0.8),
-      rgba(13, 19, 31, 0.9));
+  background: radial-gradient(
+    circle at 30% 0,
+    rgba(98, 169, 242, 0.8),
+    rgba(13, 19, 31, 0.9)
+  );
   box-shadow:
     0 0 0 1px rgba(255, 211, 115, 0.6),
     0 0 12px rgba(98, 169, 242, 0.65);
