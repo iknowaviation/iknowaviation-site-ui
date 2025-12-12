@@ -1,0 +1,546 @@
+<!-- IKA FLIGHT DECK – PROFILE HUB -->
+<div class="ika-profile-hub">
+
+  <!-- =========================================
+       HERO – FLIGHT DECK
+  ========================================== -->
+  <header class="ika-hub-hero" style="background-image:url('https://iknowaviation.com/wp-content/uploads/2025/12/f16_hero.jpg');">
+    <div class="ika-hub-hero-inner">
+
+      <!-- LEFT: Avatar, name, status -->
+      <div class="ika-hub-hero-left">
+        <div class="ika-hub-avatar-block">
+          <div class="ika-level-avatar-wrapper">
+            [uwp_user_avatar size="110"]
+          </div>
+          <div class="ika-hub-avatar-title-pill">
+            [ika_rank_title]
+          </div>
+        </div>
+
+        <div class="ika-hub-hero-main">
+          <div class="ika-hub-name-row">
+            <div class="ika-hub-name">
+              [uwp_user_title tag="span"]
+            </div>
+            <div class="ika-hub-username">
+              @[uwp_user_meta key="user_login"]
+            </div>
+          </div>
+
+			<div class="ika-hub-status-row">
+			  <span class="ika-hub-status-pill">[ika_user_status]</span>
+			  <span class="ika-hub-streak">[ika_streak_summary]</span>
+			</div>
+        </div>
+      </div>
+
+      <!-- RIGHT: CTAs -->
+      <div class="ika-hub-hero-right">
+        <div class="ika-hub-cta-row">
+          <a href="/quizzes/" class="elementor-button elementor-size-sm">
+            <span class="elementor-button-text">Continue Mission</span>
+          </a>
+          <a href="/quizzes/" class="elementor-button elementor-size-sm elementor-button-link">
+            <span class="elementor-button-text">Browse All Quizzes</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =========================================
+       HERO METRICS STRIP
+  ========================================== -->
+  <div class="ika-hub-metrics">
+    <div class="ika-hub-metrics-inner">
+
+      <div class="ika-hub-metric">
+        <div class="ika-hub-metric-label">Quizzes Completed</div>
+        <div class="ika-hub-metric-value">[ika_quizzes_completed]</div>
+      </div>
+
+      <div class="ika-hub-metric">
+        <div class="ika-hub-metric-label">Total Attempts</div>
+        <div class="ika-hub-metric-value">[ika_total_attempts]</div>
+      </div>
+
+      <div class="ika-hub-metric">
+        <div class="ika-hub-metric-label">Average Score</div>
+        <div class="ika-hub-metric-value">[ika_avg_score]</div>
+      </div>
+
+      <div class="ika-hub-metric">
+        <div class="ika-hub-metric-label">Best Score</div>
+        <div class="ika-hub-metric-value">[ika_best_score]</div>
+      </div>
+
+      <div class="ika-hub-metric">
+        <div class="ika-hub-metric-label">Current Streak</div>
+        <div class="ika-hub-metric-value">[ika_current_streak]</div>
+      </div>
+
+      <div class="ika-hub-metric">
+        <div class="ika-hub-metric-label">Total XP</div>
+        <div class="ika-hub-metric-value">[ika_total_xp]</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="ika-hub-footnote ika-hub-footnote--top">
+    Welcome to your Flight Deck – keep flying and watch your rank climb.
+  </div>
+
+  <!-- =========================================
+       RANK & XP OVERVIEW
+  ========================================== -->
+  <section class="ika-hub-section">
+    <div class="ika-hub-section-header">
+      <div>
+        <h2 class="ika-hub-section-title">Rank &amp; XP Overview</h2>
+        <p class="ika-hub-section-kicker">
+          See where you stand and how far to your next rating.
+        </p>
+      </div>
+    </div>
+
+    <div class="ika-hub-rank-xp">
+      <!-- Rank card -->
+      <div class="ika-hub-rank-card">
+        <div class="ika-hub-rank-title">
+          <div>
+            <div class="ika-hub-rank-label">Current Rank</div>
+            <div class="ika-hub-rank-name">
+              [ika_rank_title]
+            </div>
+          </div>
+          <div class="ika-hub-rank-meta">
+            [ika_rank_position]
+          </div>
+        </div>
+
+        <div class="ika-hub-rank-ladder">
+          <div class="ika-hub-rank-track">
+            <span class="ika-hub-rank-current" style="left: [ika_rank_percent]%;"></span>
+          </div>
+          <div class="ika-hub-rank-labels">
+            <span>Aviation Enthusiast</span>
+            <span>Student</span>
+            <span>Private</span>
+            <span>Instrument</span>
+            <span>Commercial</span>
+            <span>ATP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- XP card -->
+      <div class="ika-hub-xp-card">
+        <div class="ika-hub-rank-label">Progress to Next Rank</div>
+        <h3 class="ika-hub-rank-name" style="margin-top: 4px;">
+          [ika_xp_to_next_rank]
+        </h3>
+
+        <div class="ika-xp-progress-wrapper" style="margin-top: 14px;">
+          <div class="ika-xp-progress-track">
+            <div class="ika-xp-progress-bar" style="width: [ika_xp_level_progress_percent]%;"></div>
+          </div>
+          <div class="ika-xp-progress-meta">
+            <span>[ika_xp_level_earned] XP earned</span>
+            <span>Goal: [ika_xp_level_goal] XP</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       MISSIONS
+  ========================================== -->
+  <section class="ika-hub-section">
+    <div class="ika-hub-section-header">
+      <div>
+        <h2 class="ika-hub-section-title">Missions</h2>
+        <p class="ika-hub-section-kicker">
+          Complete missions to earn bonus XP and unlock new badges.
+        </p>
+      </div>
+      <a href="#" class="ika-hub-section-link">View all missions &rarr;</a>
+    </div>
+
+    <!-- single missions grid wrapper (fixed) -->
+    <div class="ika-hub-missions-grid">
+
+      <!-- Today’s Mission -->
+      <div class="ika-dm-wrapper">
+        <div class="ika-dm-header">
+          <h3 class="ika-dm-title">Today’s Mission</h3>
+          <p class="ika-dm-subtitle">Complete 2 quizzes and score at least 70%.</p>
+        </div>
+
+        <div class="ika-dm-list">
+          <div class="ika-dm-card">
+            <div class="ika-dm-card-title-row">
+              <div class="ika-dm-card-title">Quiz sorties</div>
+              <span class="ika-dm-card-status">In progress</span>
+            </div>
+            <p class="ika-dm-card-description">
+              Fly two quiz routes before midnight.
+            </p>
+            <div class="ika-dm-card-meta">
+              <span>1 / 2 quizzes</span>
+              <span class="ika-dm-reward">+15 XP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Weekly Flight Plan -->
+      <div class="ika-dm-wrapper">
+        <div class="ika-dm-header">
+          <h3 class="ika-dm-title">Weekly Flight Plan</h3>
+          <p class="ika-dm-subtitle">Earn 200 XP by exploring new quizzes.</p>
+        </div>
+
+        <div class="ika-dm-list">
+          <div class="ika-dm-card">
+            <div class="ika-dm-card-title-row">
+              <div class="ika-dm-card-title">XP target</div>
+              <span class="ika-dm-card-status">On track</span>
+            </div>
+            <p class="ika-dm-card-description">
+              Keep flying new topics to build experience.
+            </p>
+            <div class="ika-dm-card-meta">
+              <span>118 / 200 XP</span>
+              <span class="ika-dm-reward">+50 XP bonus</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Special Operation -->
+      <div class="ika-dm-wrapper">
+        <div class="ika-dm-header">
+          <h3 class="ika-dm-title">Special Operation</h3>
+          <p class="ika-dm-subtitle">Beat your best score on any quiz.</p>
+        </div>
+
+        <div class="ika-dm-list">
+          <div class="ika-dm-card">
+            <div class="ika-dm-card-title-row">
+              <div class="ika-dm-card-title">Ace of the Week</div>
+              <span class="ika-dm-card-status">Not started</span>
+            </div>
+            <p class="ika-dm-card-description">
+              Pick a quiz and try to top your personal record.
+            </p>
+            <div class="ika-dm-card-meta">
+              <span>0 / 1 attempts</span>
+              <span class="ika-dm-reward">+25 XP + badge</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================
+       BADGES & ACHIEVEMENTS
+  ========================================== -->
+  <section class="ika-hub-section">
+    <div class="ika-hub-section-header">
+      <div>
+        <h2 class="ika-hub-section-title">Badges &amp; Achievements</h2>
+        <p class="ika-hub-section-kicker">
+          Earn your virtual wings as you progress through iKnowAviation quizzes.
+        </p>
+      </div>
+    </div>
+
+    <div class="ika-hub-badges-layout">
+
+      <!-- Recent badges -->
+      <div class="ika-hub-badges-card">
+        <h3 class="ika-hub-section-title" style="font-size: 1rem;">Recent Badges</h3>
+
+        <div class="ika-hub-badge-grid">
+          <div class="ika-hub-badge-item">
+            <div class="ika-hub-badge-icon">
+              <img src="/path/to/badge1.png" alt="Badge 1" />
+            </div>
+            <div class="ika-hub-badge-name">Pattern Work Pro</div>
+            <div class="ika-hub-badge-meta">Earned 2 days ago · +20 XP</div>
+          </div>
+
+          <div class="ika-hub-badge-item">
+            <div class="ika-hub-badge-icon">
+              <img src="/path/to/badge2.png" alt="Badge 2" />
+            </div>
+            <div class="ika-hub-badge-name">Runway Scholar</div>
+            <div class="ika-hub-badge-meta">Earned 5 days ago · +15 XP</div>
+          </div>
+
+          <div class="ika-hub-badge-item">
+            <div class="ika-hub-badge-icon">
+              <img src="/path/to/badge3.png" alt="Badge 3" />
+            </div>
+            <div class="ika-hub-badge-name">Checklist Champ</div>
+            <div class="ika-hub-badge-meta">Earned 1 week ago · +10 XP</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upcoming unlocks -->
+      <div class="ika-hub-upcoming-card">
+        <h3 class="ika-hub-section-title" style="font-size: 1rem;">Next Upgrades</h3>
+
+        <div class="ika-hub-upcoming-list">
+          <div class="ika-hub-upcoming-item">
+            <div class="ika-hub-upcoming-labels">
+              <div class="ika-hub-upcoming-name">Commercial Pilot</div>
+              <div class="ika-hub-upcoming-desc">Reach 2,000 total XP.</div>
+            </div>
+            <div class="ika-hub-upcoming-progress">973 XP to go</div>
+          </div>
+
+          <div class="ika-hub-upcoming-item">
+            <div class="ika-hub-upcoming-labels">
+              <div class="ika-hub-upcoming-name">Quiz Marathoner</div>
+              <div class="ika-hub-upcoming-desc">Complete 10 quizzes this week.</div>
+            </div>
+            <div class="ika-hub-upcoming-progress">6 / 10</div>
+          </div>
+
+          <div class="ika-hub-upcoming-item">
+            <div class="ika-hub-upcoming-labels">
+              <div class="ika-hub-upcoming-name">Perfect Approach</div>
+              <div class="ika-hub-upcoming-desc">Earn three 100% scores.</div>
+            </div>
+            <div class="ika-hub-upcoming-progress">2 / 3</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================
+       LEADERBOARD
+  ========================================== -->
+  <section class="ika-hub-section">
+    <div class="ika-hub-section-header">
+      <div>
+        <h2 class="ika-hub-section-title">Squadron Leaderboard</h2>
+        <p class="ika-hub-section-kicker">
+          See how you stack up against other pilots.
+        </p>
+      </div>
+    </div>
+
+    <div class="ika-hub-leaderboard-card">
+      <div class="ika-hub-leaderboard-top">
+        <div class="ika-hub-section-kicker" style="margin: 0;">
+          This week’s rankings
+        </div>
+        <div class="ika-hub-leaderboard-filters">
+          <button class="ika-hub-leaderboard-pill is-active">This Week</button>
+          <button class="ika-hub-leaderboard-pill">All Time</button>
+          <button class="ika-hub-leaderboard-pill">Friends</button>
+        </div>
+      </div>
+
+      <!-- Shortcode output -->
+      [ika_leaderboard limit="10"]
+    </div>
+  </section>
+
+  <!-- =========================================
+       FLIGHT LOG / QUIZ HISTORY
+  ========================================== -->
+  <section class="ika-hub-section">
+    <div class="ika-hub-section-header">
+      <div>
+        <h2 class="ika-hub-section-title">Flight Log</h2>
+        <p class="ika-hub-section-kicker">
+          Your recent quiz activity and progress.
+        </p>
+      </div>
+    </div>
+
+    <div class="ika-hub-flightlog-layout">
+
+      <!-- Summary -->
+      <div class="ika-hub-flightlog-summary">
+        <h3 class="ika-hub-section-title" style="font-size: 1rem;">Recent Activity</h3>
+        <div class="ika-hub-flightlog-statlist">
+          <div class="ika-hub-flightlog-stat">
+            <span class="ika-hub-flightlog-label">Last quiz:</span>
+            <span>2 hours ago</span>
+          </div>
+          <div class="ika-hub-flightlog-stat">
+            <span class="ika-hub-flightlog-label">Average (last 10):</span>
+            <span>74%</span>
+          </div>
+          <div class="ika-hub-flightlog-stat">
+            <span class="ika-hub-flightlog-label">Highest recent score:</span>
+            <span>100%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="ika-hub-flightlog-tablecard">
+        <div class="ika-hub-flightlog-controls">
+          <div class="ika-hub-section-kicker" style="margin: 0;">
+            Latest attempts
+          </div>
+          <select class="ika-hub-flightlog-filter">
+            <option>All quizzes</option>
+            <option>Completed</option>
+            <option>In progress</option>
+            <option>Favorites</option>
+          </select>
+        </div>
+
+        <div style="overflow-x:auto;">
+          <table class="ika-hub-flightlog-table">
+            <thead>
+              <tr>
+                <th>Quiz</th>
+                <th>Last score</th>
+                <th>Attempts</th>
+                <th>XP</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ika-hub-flightlog-quizname">
+                  <a href="#">Airport Codes 101</a>
+                </td>
+                <td class="ika-hub-flightlog-score">92%</td>
+                <td>3</td>
+                <td class="ika-hub-flightlog-xp">+22</td>
+                <td>
+                  <span class="ika-hub-flightlog-status-badge is-complete">
+                    Completed
+                  </span>
+                </td>
+                <td class="ika-hub-flightlog-action">
+                  <a href="#" class="ika-hub-section-link">Review</a>
+                </td>
+              </tr>
+              <tr>
+                <td class="ika-hub-flightlog-quizname">
+                  <a href="#">Runway Signs</a>
+                </td>
+                <td class="ika-hub-flightlog-score">78%</td>
+                <td>1</td>
+                <td class="ika-hub-flightlog-xp">+15</td>
+                <td>
+                  <span class="ika-hub-flightlog-status-badge is-complete">
+                    Completed
+                  </span>
+                </td>
+                <td class="ika-hub-flightlog-action">
+                  <a href="#" class="ika-hub-section-link">Retake</a>
+                </td>
+              </tr>
+              <tr>
+                <td class="ika-hub-flightlog-quizname">
+                  <a href="#">Weather Basics</a>
+                </td>
+                <td class="ika-hub-flightlog-score">65%</td>
+                <td>2</td>
+                <td class="ika-hub-flightlog-xp">+10</td>
+                <td>
+                  <span class="ika-hub-flightlog-status-badge">
+                    In progress
+                  </span>
+                </td>
+                <td class="ika-hub-flightlog-action">
+                  <a href="#" class="ika-hub-section-link">Continue</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       ACCOUNT & PREFERENCES
+  ========================================== -->
+  <section class="ika-hub-section">
+    <div class="ika-hub-section-header">
+      <div>
+        <h2 class="ika-hub-section-title">Account &amp; Preferences</h2>
+        <p class="ika-hub-section-kicker">
+          Tune your avatar, profile, and notifications.
+        </p>
+      </div>
+    </div>
+
+    <div class="ika-hub-account-grid">
+
+      <!-- Avatar / profile -->
+      <div class="ika-hub-account-card">
+        <div class="ika-hub-account-row">
+          <div class="ika-hub-account-avatar-preview">
+            <div class="ika-level-avatar-wrapper">
+              [uwp_user_avatar size="72"]
+            </div>
+          </div>
+          <div>
+            <div class="ika-hub-section-title" style="font-size: 1rem;">
+              Profile &amp; Avatar
+            </div>
+            <p class="ika-hub-account-text">
+              Update your display name, avatar, and basic account info.
+            </p>
+          </div>
+        </div>
+        <div style="margin-top: 10px;">
+          <a href="/account-settings/" class="ika-hub-account-settings-btn">
+            Account Settings
+          </a>
+        </div>
+      </div> <!-- end first account card -->
+
+      <!-- Preferences -->
+      <div class="ika-hub-account-card">
+        <div class="ika-hub-section-title" style="font-size: 1rem;">
+          Notifications &amp; Briefings
+        </div>
+        <p class="ika-hub-account-text">
+          Choose how you’d like to be notified about missions and rankings.
+        </p>
+        <div class="ika-hub-pref-list">
+          <label class="ika-hub-pref-item">
+            <input type="checkbox" checked />
+            <span>Email me weekly mission briefings</span>
+          </label>
+          <label class="ika-hub-pref-item">
+            <input type="checkbox" checked />
+            <span>Notify me when I level up</span>
+          </label>
+          <label class="ika-hub-pref-item">
+            <input type="checkbox" />
+            <span>Show leaderboard highlights on login</span>
+          </label>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<div>[ika_stats_rebuild_admin_link label="Stats Rebuild (admin debug)"]
+</div>
+</div>

@@ -1,0 +1,91 @@
+<div class="ika-results-page hero-jet">
+	<span id="ika-quiz-percentage" data-percentage="%%PERCENTAGE%%" style="display:none;"></span>
+
+	<!-- HERO WITH IMAGE -->
+	<div class="ika-hero">
+		<div class="ika-hero-inner"> 
+			<div class="ika-hero-badge">Quiz debrief</div>
+			<h1 class="ika-hero-title">Nice work, %%USER-NAME%%!</h1>
+			<p class="ika-hero-subtitle">You just completed <strong>%%QUIZ_NAME%%</strong>.
+			</p>
+		</div>
+	</div>
+
+	<!-- MAIN BODY -->
+	<div class="ika-results-main">
+		<!-- STATS -->
+		<div class="ika-stats-grid">
+		
+			<div class="ika-stat-card">
+				<div class="ika-stat-label">Score</div>
+					<div class="ika-stat-value">
+						<span>%%CORRECT%%</span> / %%TOTAL%%
+					</div>
+				<div class="ika-stat-mini">That’s <strong>%%PERCENTAGE%%%</strong> correct.</div>
+			</div>
+
+			<div class="ika-stat-card">
+				<div class="ika-stat-label">Grade &amp; points</div>
+					<div class="ika-stat-value">
+						<span>%%GRADE%%</span>
+					</div>
+				<div class="ika-stat-mini">You earned <strong>%%POINTS%%</strong> points.</div>
+			</div>
+
+			<div class="ika-stat-card">
+				<div class="ika-stat-label">Compared to others</div>
+					<div class="ika-stat-value">
+						<span>%%AVG-POINTS%%</span>
+					</div>
+				<div class="ika-stat-mini">Average points on this quiz.</div>
+			</div>
+
+			<div class="ika-stat-card">
+				<div class="ika-stat-label">Rank &amp; XP</div>
+					<div class="ika-stat-value">
+					  <span>[ika_rank_title]</span>
+					</div>
+				<div class="ika-stat-mini">
+					You’ve accumulated <strong>[ika_total_xp]</strong> XP so far.<br>
+					<span class="ika-rank-progress">[ika_next_rank_progress]</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="ika-xp-progress-section">[ika_xp_progress_bar]</div>
+
+		<!-- CTA BUTTONS -->
+		<div class="ika-btn-row">
+			<a href="/quiz" class="ika-btn ika-btn-primary">Take another quiz</a>
+			<a href="/academy/introduction-to-aviation" class="ika-btn ika-btn-secondary">Start the Introduction to Aviation course</a>
+		</div>
+
+		<!-- SOCIAL SHARE -->
+		<div class="ika-share-row">
+			<div class="ika-share-label">Share your score:</div>
+			<div class="ika-share-buttons">[watushare-buttons]</div>
+		</div>
+
+		<!-- NEXT STEPS -->
+		<div class="ika-next-steps">
+			<strong>Recommended next steps</strong><br />
+			Retake this quiz and aim for a higher percentage.<br />
+			Try another quiz in the <strong>%%CATEGORY%%</strong> category.<br />
+			Move into a related Academy course for a deeper dive.
+		</div>
+
+		<!-- ANSWERS -->
+		<div class="ika-answer-section">
+			<h2 class="ika-answer-title">ANSWER BREAKDOWN</h2>
+			<p class="ika-answer-note">
+			Review each question and compare your responses to the correct answers below.
+			</p>
+			%%ANSWERS%%
+
+			<div class="ika-footer-note">
+			If this quiz issues a certificate, you can access it here:
+			%%CERTIFICATE%%
+			</div>
+		</div>
+	</div>
+</div>

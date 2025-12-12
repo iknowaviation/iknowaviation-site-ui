@@ -1,0 +1,914 @@
+/* =========================================================
+   GLOBAL / SHARED STYLES
+   ========================================================= */
+
+/* SAFE TWEAK ZONE:
+   - You can adjust the placeholder color here if you ever want a different gray.
+*/
+::placeholder {
+  color: #9CA3AF; /* soft gray */
+  opacity: 1;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+/* Global section spacing for Elementor sections */
+.elementor-section {
+  scroll-margin-top: 80px;
+}
+
+/* Typography helpers */
+.ika-heading-eyebrow {
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #6B7280;
+}
+
+/* Global button reset for Elementor buttons */
+.elementor-button {
+  border-radius: 999px;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 13px;
+  padding: 10px 22px;
+  border-width: 0;
+  transition: all 0.18s ease-out;
+}
+
+/* Button hover defaults */
+.elementor-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.22);
+}
+
+/* Primary button wrapper */
+.ika-btn-primary .elementor-button {
+  background-color: #1E5BBF;
+  color: #FFFFFF;
+}
+.ika-btn-primary .elementor-button:hover {
+  background-color: #174A99;
+}
+
+/* Secondary button wrapper */
+.ika-btn-secondary .elementor-button {
+  background-color: #111827;
+  color: #E5E7EB;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+}
+.ika-btn-secondary .elementor-button:hover {
+  background-color: #020617;
+}
+
+/* Ghost / outline button wrapper */
+.ika-btn-ghost .elementor-button {
+  background-color: transparent;
+  color: #1E40AF;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+}
+.ika-btn-ghost .elementor-button:hover {
+  background-color: rgba(37, 99, 235, 0.06);
+}
+
+/* Link-style button wrapper */
+.ika-btn-link .elementor-button {
+  background: transparent;
+  color: #1E40AF;
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: none;
+}
+.ika-btn-link .elementor-button .elementor-button-icon {
+  margin-left: 6px;
+}
+
+/* Global hero layout helpers */
+.hero-large {
+  padding: 80px 0 72px;
+}
+
+.hero-large .elementor-container {
+  align-items: center;
+}
+
+/* Card component (shared across site) */
+.ika-card {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  padding: 24px 24px 22px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  transition: transform 0.18s ease-out, box-shadow 0.18s ease-out,
+    border-color 0.18s ease-out;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.ika-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+  border-color: #1E5BBF;
+}
+
+/* Icon styling for cards */
+.ika-card .elementor-widget-icon .elementor-icon {
+  margin-bottom: 16px;
+}
+
+/* SAFE TWEAK ZONE – DARK SECTION COLORS:
+   - Change background / text colors for dark sections here.
+*/
+.ika-dark {
+  background-color: #0D1B2A;
+}
+.ika-dark h1,
+.ika-dark h2,
+.ika-dark h3,
+.ika-dark h4,
+.ika-dark h5,
+.ika-dark h6 {
+  color: #FFFFFF;
+}
+.ika-dark p,
+.ika-dark li {
+  color: #E5EDF5;
+}
+.ika-dark .muted {
+  color: #A9B7C6;
+}
+
+/* Link colors in dark sections */
+.ika-dark a {
+  color: #62A9F2;
+}
+.ika-dark a:hover {
+  color: #93C5FD;
+}
+
+/* FORM STYLING – GENERIC (for Elementor or other forms using .ika-form) */
+.ika-form .form-row,
+.ika-form .form-group {
+  margin-bottom: 14px;
+}
+
+.ika-form label {
+  display: block;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.ika-form input[type="text"],
+.ika-form input[type="email"],
+.ika-form input[type="password"],
+.ika-form input[type="number"],
+.ika-form input[type="url"],
+.ika-form input[type="tel"],
+.ika-form input[type="search"],
+.ika-form select,
+.ika-form textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #D1D9E6;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: "Open Sans", system-ui, sans-serif;
+  color: #111827;
+  background-color: #FFFFFF;
+  transition: border-color 0.15s ease-out, box-shadow 0.15s ease-out,
+    background-color 0.15s ease-out;
+}
+
+/* Form focus */
+.ika-form input:focus,
+.ika-form select:focus,
+.ika-form textarea:focus {
+  outline: none;
+  border-color: #2563EB;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.08);
+}
+
+/* Error state */
+.ika-form .has-error input,
+.ika-form .has-error select,
+.ika-form .has-error textarea {
+  border-color: #DC2626;
+}
+.ika-form .error-message {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #DC2626;
+}
+
+/* FOOTER SOCIAL ICONS (if used globally) */
+.footer-social-icons {
+  display: flex;
+  gap: 10px;
+}
+.footer-social-icons a {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #6B7280;
+  transition: all 0.15s ease-out;
+}
+.footer-social-icons a:hover {
+  color: #111827;
+  border-color: #111827;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   USERSWP – GLOBAL FORM & BUTTON STYLING
+   (Login, Register, Account, etc.)
+   ========================================================= */
+
+/* Make sure all UsersWP containers use border-box */
+.uwp-login-form *,
+.uwp-registration-form *,
+.uwp-account-form *,
+.uwp_form * {
+  box-sizing: border-box;
+}
+
+/* Reveal labels & unify label styling */
+.uwp-login-form .form-group label,
+.uwp-registration-form .form-group label,
+.uwp-account-form .form-group label,
+.uwp_form .form-group label {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+/* Required asterisk color */
+.uwp-login-form .form-group label span.required,
+.uwp-registration-form .form-group label span.required,
+.uwp-account-form .form-group label span.required,
+.uwp_form .form-group label span.required {
+  color: #DC2626;
+}
+
+/* Inputs */
+.uwp-login-form input[type="text"],
+.uwp-login-form input[type="email"],
+.uwp-login-form input[type="password"],
+.uwp-registration-form input[type="text"],
+.uwp-registration-form input[type="email"],
+.uwp-registration-form input[type="password"],
+.uwp-account-form input[type="text"],
+.uwp-account-form input[type="email"],
+.uwp-account-form input[type="password"],
+.uwp_form input[type="text"],
+.uwp_form input[type="email"],
+.uwp_form input[type="password"],
+.uwp_form input[type="number"],
+.uwp_form input[type="url"],
+.uwp_form input[type="tel"],
+.uwp_form select,
+.uwp_form textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #D1D9E6;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: "Open Sans", system-ui, sans-serif;
+  color: #111827;
+  background-color: #FFFFFF;
+  transition: border-color 0.15s ease-out, box-shadow 0.15s ease-out,
+    background-color 0.15s ease-out;
+}
+
+/* Focus state */
+.uwp-login-form input:focus,
+.uwp-registration-form input:focus,
+.uwp-account-form input:focus,
+.uwp_form input:focus,
+.uwp_form select:focus,
+.uwp_form textarea:focus {
+  outline: none;
+  border-color: #2563EB;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.08);
+}
+
+/* Checkboxes */
+.uwp-login-form .form-check-input,
+.uwp-registration-form .form-check-input,
+.uwp-account-form .form-check-input,
+.uwp_form .form-check-input {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1px solid #D1D9E6;
+}
+.uwp-login-form .form-check-label,
+.uwp-registration-form .form-check-label,
+.uwp-account-form .form-check-label,
+.uwp_form .form-check-label {
+  font-size: 13px;
+  color: #4B5563;
+}
+
+/* UsersWP buttons – unified styling */
+.uwp-login-form button[type="submit"],
+.uwp-registration-form button[type="submit"],
+.uwp-account-form button[type="submit"],
+.uwp_form button[type="submit"],
+.uwp-login-form .uwp-button,
+.uwp-registration-form .uwp-button,
+.uwp-account-form .uwp-button,
+.uwp_form .uwp-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background-color: #1E5BBF;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  transition: all 0.18s ease-out;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
+}
+.uwp-login-form button[type="submit"]:hover,
+.uwp-registration-form button[type="submit"]:hover,
+.uwp-account-form button[type="submit"]:hover,
+.uwp_form button[type="submit"]:hover,
+.uwp-login-form .uwp-button:hover,
+.uwp-registration-form .uwp-button:hover,
+.uwp-account-form .uwp-button:hover,
+.uwp_form .uwp-button:hover {
+  background-color: #174A99;
+  transform: translateY(-1px);
+}
+
+/* Footer links in UsersWP */
+.uwp-footer-links {
+  margin-top: 16px;
+}
+.uwp-footer-links .uwp-footer-link {
+  display: inline-block;
+  margin-right: 12px;
+}
+.uwp-footer-links .uwp-footer-link a {
+  font-size: 13px;
+  font-weight: 500;
+  color: #4B5563;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease-out, border-color 0.15s ease-out;
+}
+.uwp-footer-links .uwp-footer-link a:hover {
+  color: #62A9F2;
+}
+
+/* Social login heading */
+.uwp-social-class .h5 {
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #98A7B6;
+}
+
+/* ==========================================================================
+   SECTION 0 — COLOR TOKENS & HELPERS (GLOBAL DESIGN SYSTEM)
+   ========================================================================== */
+:root {
+  --ika-navy-900:#0D131F;
+  --ika-navy-800:#1A2740;
+  --ika-blue-600:#006699;
+  --ika-blue-400:#62A9F2;
+  --ika-amber-300:#FFD373;
+  --ika-surface-100:#F5F7FA;
+  --ika-surface-50:#F9FAFB;
+  --ika-border-soft:#E5EDF5;
+  --ika-border-subtle:#CBD5E1;
+  --ika-text-main:#111827;
+  --ika-text-muted:#6B7280;
+  --ika-white:#ffffff;
+}
+
+.ika-hero-bg       { background: radial-gradient(circle at 0 0, ...ue-400) 0, var(--ika-navy-800) 45%, var(--ika-navy-900) 100%); }
+.ika-hero-surface  { background-color: var(--ika-surface-100); }
+.ika-hero-accent   { color: var(--ika-amber-300); }
+.ika-hero-border   { border-color: var(--ika-border-soft); }
+.ika-text-main     { color: var(--ika-text-main); }
+.ika-text-muted    { color: var(--ika-text-muted); }
+.ika-tab-active-bg { background-color: rgba(0,102,153,.12); }
+.ika-tab-hover-bg  { background-color: rgba(0,102,153,.06); }
+
+/* =========================================
+   iKnowAviation – XP Leaderboard
+   ========================================= */
+
+.ika-leaderboard {
+  margin-top: 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: #0D131F;
+}
+
+.ika-leaderboard-row {
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1.5fr) minmax(0, 1.2fr) 80px;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: #E5ECF5;
+}
+
+.ika-leaderboard-header {
+  background: rgba(15, 23, 42, 0.9);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.8rem;
+}
+
+.ika-leaderboard-row:nth-child(even):not(.ika-leaderboard-header) {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.ika-leaderboard-col.ika-col-rank {
+  text-align: center;
+  font-weight: 600;
+}
+
+.ika-leaderboard-col.ika-col-user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ika-leaderboard-col.ika-col-user img.avatar {
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+}
+
+.ika-leaderboard-name {
+  font-weight: 500;
+}
+
+.ika-leaderboard-col.ika-col-title {
+  font-size: 0.9rem;
+}
+
+.ika-leaderboard-col.ika-col-xp {
+  text-align: right;
+  font-weight: 600;
+}
+
+.ika-leaderboard-empty {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #94A3B8;
+}
+
+/* =========================================
+   iKnowAviation – XP Progress Bar
+   ========================================= */
+
+.ika-xp-progress-wrapper {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem 1.25rem;
+  border-radius: 12px;
+  background: rgba(13, 19, 31, 0.96);
+  border: 1px solid rgba(148, 163, 184, 0.45);
+}
+
+.ika-xp-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+  color: #E5ECF5;
+}
+
+.ika-xp-progress-rank {
+  font-weight: 600;
+}
+
+.ika-xp-progress-count {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #FFD373;
+}
+
+.ika-xp-progress-bar {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  overflow: hidden;
+  margin-bottom: 0.6rem;
+}
+
+.ika-xp-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #62A9F2, #FFD373);
+  transition: width 0.4s ease-out;
+}
+
+.ika-xp-progress-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.8rem;
+  color: #9CA3AF;
+}
+
+.ika-xp-progress-next {
+  text-align: right;
+  font-weight: 500;
+  color: #E5ECF5;
+}
+
+/* ============================================================
+   iKnowAviation – Achievement / Badge / Rank-Up Modal
+   Shared styling for:
+   - WATU Play badge modal (#watuproplay-modal)
+   - Rank-up modal (.ika-rankup-dialog / #ika-rankup-modal)
+   ============================================================ */
+
+/* Outer dialog container */
+.ui-dialog[aria-describedby="watuproplay-modal"],
+.ika-rankup-dialog.ui-dialog {
+  max-width: 420px;
+  width: 100%;
+  border-radius: 18px;
+  border: 2px solid #FFD373;
+  background: #040916;
+  box-shadow: 0 0 35px rgba(255, 211, 115, 0.75);
+  overflow: hidden;
+}
+
+/* Title bar */
+.ui-dialog[aria-describedby="watuproplay-modal"] .ui-dialog-titlebar,
+.ika-rankup-dialog .ui-dialog-titlebar {
+  background: #040916;
+  border: none;
+  padding: 0.6rem 0.9rem;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #FFD373;
+  position: relative;
+}
+
+/* Title text */
+.ui-dialog[aria-describedby="watuproplay-modal"] .ui-dialog-title,
+.ika-rankup-dialog .ui-dialog-title {
+  color: #FFD373;
+}
+
+/* Close button */
+.ui-dialog[aria-describedby="watuproplay-modal"] .ui-dialog-titlebar-close,
+.ika-rankup-dialog .ui-dialog-titlebar-close {
+  position: absolute;
+  top: 50%;
+  right: 0.6rem;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(15, 23, 42, 0.9);
+  cursor: pointer;
+  padding: 0;
+}
+
+.ui-dialog[aria-describedby="watuproplay-modal"] .ui-dialog-titlebar-close::before,
+.ika-rankup-dialog .ui-dialog-titlebar-close::before {
+  content: '×';
+  display: block;
+  line-height: 22px;
+  text-align: center;
+  font-size: 16px;
+  color: #E5ECF5;
+}
+
+/* Hide default icon/text inside close button */
+.ui-dialog[aria-describedby="watuproplay-modal"] .ui-dialog-titlebar-close .ui-button-text,
+.ui-dialog[aria-describedby="watuproplay-modal"] .ui-dialog-titlebar-close .ui-icon,
+.ika-rankup-dialog .ui-dialog-titlebar-close .ui-button-text,
+.ika-rankup-dialog .ui-dialog-titlebar-close .ui-icon {
+  display: none !important;
+}
+
+/* Dialog content area */
+#watuproplay-modal,
+#ika-rankup-modal {
+  padding: 1.4rem 1.8rem 1.5rem;
+  background: #040916;
+}
+
+/* Shared inner layout for badges / ranks */
+#watuproplay-modal .ika-badge-modal-inner,
+#ika-rankup-modal .ika-badge-modal-inner {
+  text-align: center;
+}
+
+#watuproplay-modal .ika-badge-modal-subtitle,
+#ika-rankup-modal .ika-badge-modal-subtitle {
+  margin-bottom: 0.9rem;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #E5ECF5;
+}
+
+#watuproplay-modal .ika-badge-modal-list,
+#ika-rankup-modal .ika-badge-modal-list {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+#watuproplay-modal .ika-badge-modal-item,
+#ika-rankup-modal .ika-badge-modal-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#watuproplay-modal .ika-badge-modal-img,
+#ika-rankup-modal .ika-badge-modal-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 18px;
+  background: #0B1220;
+  padding: 0.75rem;
+}
+
+#watuproplay-modal .ika-badge-modal-title,
+#ika-rankup-modal .ika-badge-modal-title {
+  margin-top: 0.6rem;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #E5ECF5;
+}
+
+/* =========================================
+   Shared Achievement Modal Close Button
+   (badge + rank-up)
+   ========================================= */
+
+/* Target BOTH dialogs */
+.ui-dialog[aria-describedby="watuproplay-modal"] .ui-dialog-titlebar-close,
+.ika-rankup-dialog .ui-dialog-titlebar-close {
+  position: absolute;
+  top: 50%;
+  right: 0.6rem;
+  transform: translateY(-50%);
+  width: 22px !important;
+  height: 22px !important;
+  border-radius: 999px !important;
+  border: none !important;
+  background: rgba(15, 23, 42, 0.9) !important;
+  cursor: pointer;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+/* The “X” glyph itself */
+.ui-dialog[aria-describedby="watuproplay-modal"] .ui-dialog-titlebar-close::before,
+.ika-rankup-dialog .ui-dialog-titlebar-close::before {
+  content: '×';
+  display: block;
+  line-height: 22px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #E5ECF5;
+}
+
+/* Hide default jQuery UI icon/text */
+.ui-dialog[aria-describedby="watuproplay-modal"] .ui-dialog-titlebar-close .ui-button-text,
+.ui-dialog[aria-describedby="watuproplay-modal"] .ui-dialog-titlebar-close .ui-icon,
+.ika-rankup-dialog .ui-dialog-titlebar-close .ui-button-text,
+.ika-rankup-dialog .ui-dialog-titlebar-close .ui-icon {
+  display: none !important;
+}
+
+/* Daily Missions – iKnowAviation */
+.ika-dm-wrapper {
+  background: #0D131F;
+  border-radius: 12px;
+  padding: 20px 22px;
+  border: 1px solid rgba(255, 211, 115, 0.25);
+}
+
+.ika-dm-header {
+  margin-bottom: 16px;
+}
+
+.ika-dm-title {
+  margin: 0;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #F5F7FA;
+}
+
+.ika-dm-subtitle {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: #98A7B6;
+}
+
+.ika-dm-list {
+  display: grid;
+  gap: 12px;
+}
+
+.ika-dm-card {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(13, 19, 31, 0.9);
+  border: 1px solid rgba(152, 167, 182, 0.35);
+}
+
+.ika-dm-card--completed {
+  border-color: #FFD373;
+  box-shadow: 0 0 0 1px rgba(255, 211, 115, 0.35);
+}
+
+.ika-dm-card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.ika-dm-card-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #F1F3F5;
+}
+
+.ika-dm-card-status {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(152, 167, 182, 0.6);
+  color: #98A7B6;
+}
+
+.ika-dm-card--completed .ika-dm-card-status {
+  border-color: #FFD373;
+  color: #FFD373;
+}
+
+.ika-dm-card-description {
+  margin: 6px 0 0;
+  font-size: 0.85rem;
+  color: #C4CFD9;
+}
+
+.ika-dm-card-meta {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #C4CFD9;
+}
+
+.ika-dm-reward {
+  font-weight: 600;
+  color: #FFD373;
+}
+
+/* Daily Missions – Stats row */
+.ika-dm-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.ika-dm-stat {
+  background: rgba(15, 24, 40, 0.9);
+  border-radius: 10px;
+  padding: 8px 10px;
+  border: 1px solid rgba(152, 167, 182, 0.35);
+}
+
+.ika-dm-stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #98A7B6;
+  margin-bottom: 2px;
+}
+
+.ika-dm-stat-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #F5F7FA;
+}
+
+/* Daily Missions – Stats row */
+.ika-dm-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.ika-dm-stat {
+  background: rgba(15, 24, 40, 0.9);
+  border-radius: 10px;
+  padding: 8px 10px;
+  border: 1px solid rgba(152, 167, 182, 0.35);
+}
+
+.ika-dm-stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #98A7B6;
+  margin-bottom: 2px;
+}
+
+.ika-dm-stat-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #F5F7FA;
+}
+
+/* Avatar level ring + badge */
+.ika-level-avatar-wrapper {
+  position: relative;
+  display: inline-block;
+  border-radius: 999px;
+  padding: 3px;
+  background: radial-gradient(circle at 30% 0,
+      rgba(98, 169, 242, 0.8),
+      rgba(13, 19, 31, 0.9));
+  box-shadow:
+    0 0 0 1px rgba(255, 211, 115, 0.6),
+    0 0 12px rgba(98, 169, 242, 0.65);
+}
+
+.ika-level-avatar-wrapper img.avatar {
+  border-radius: 999px;
+  display: block;
+}
+
+/* Tiny label: "Lv X" */
+.ika-level-badge {
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+  transform: translate(10%, 10%);
+  font-size: 0.65rem;
+  font-weight: 700;
+  font-family: "Montserrat", system-ui, sans-serif;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: #0D131F;
+  color: #FFD373;
+  border: 1px solid #FFD373;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+}
+
+/* Optional: slightly scale avatar on hover in dashboards/profile */
+.ika-level-avatar-wrapper:hover img.avatar {
+  transform: scale(1.02);
+  transition: transform 120ms ease-out;
+}
