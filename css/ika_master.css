@@ -1,8 +1,47 @@
+/* ========================================================================== 
+   IKA MASTER CSS — CLEAN v2 (Conservative)
+   - Keeps original cascade order (no rule reordering)
+   - Removes exact duplicate blocks and repetitive comments
+   - Normalizes whitespace
+   - Adds lightweight Table of Contents (from existing headers)
+   ========================================================================== */
+
+/* --- Table of Contents (auto-generated from file headers) --- */
+/* 01. SECTION 0 — COLOR TOKENS & HELPERS (GLOBAL DESIGN SYSTEM) */
+/* 02. LAYOUT UTILITIES — apply these as CSS classes on Elementor top containers */
+/* 03. GLOBAL / SHARED BASICS */
+/* 04. ELEMENTOR – GLOBAL BUTTON STYLING */
+/* 05. HERO LAYOUT HELPERS (GENERAL) */
+/* 06. CARD COMPONENT (SHARED ACROSS SITE) */
+/* 07. DARK SECTION COLORS (SAFE TWEAK ZONE) */
+/* 08. FORM STYLING – GENERIC (.ika-form) */
+/* 09. FOOTER SOCIAL ICONS (GLOBAL) */
+/* 10. IKA – XP LEADERBOARD */
+/* 11. IKA – XP PROGRESS BAR */
+/* 12. IKA – ACHIEVEMENT / BADGE / RANK-UP MODALS */
+/* 13. DAILY MISSIONS – iKnowAviation */
+/* 14. AVATAR LEVEL RING + LEVEL BADGE */
+/* 15. IKA – GLOBAL TYPOGRAPHY BASELINE (fixes line-height issues) */
+/* 16. IKA – QUIZ HUB SECTION BACKGROUND */
+/* 17. QUIZ HUB — SEARCH TEXT SIZE ALIGNMENT */
+/* 18. QUIZ HUB — BROWSE SECTION SPACING (scoped + reusable) */
+/* 19. QUIZ HUB — BROWSE SECTION SPACING TUNING */
+/* 20. QUIZ HUB — SEARCH INPUT HEIGHT REFINEMENT */
+/* 21. QUIZ HUB — VERTICAL SPACING COMPRESSION (FINAL) */
+/* 22. QUIZ CARDS — difficulty pill (clean + readable) */
+/* 23. QUIZ HUB — align toolbar + cards to same width */
+/* 24. QUIZ CARDS — remove button tray/well */
+/* 25. QUIZ CARDS — FORCE BADGES LEFT (override Elementor) */
+/* 26. QUIZ CARDS — REMOVE BUTTON WELL / TRAY COMPLETELY */
+/* 27. QUIZ CARDS — Difficulty pill (brighter gold) */
+/* 28. TAXONOMY PILLS */
+/* 29. SEARCH INPUT */
+/* 30. SEARCH BUTTON */
+
 /* =========================================================
    iKnowAviation – MASTER (Global / Shared Styles)
    Used site-wide: Elementor, UsersWP, UI components, missions, modals
    ========================================================= */
-
 
 /* ==========================================================================
    SECTION 0 — COLOR TOKENS & HELPERS (GLOBAL DESIGN SYSTEM)
@@ -23,6 +62,52 @@
   --ika-white: #ffffff;
 }
 
+/* ==========================================================================
+   LAYOUT UTILITIES — apply these as CSS classes on Elementor top containers
+   ========================================================================== */
+
+/* Page background modes */
+
+/* Centered shell that locks width */
+
+/* Consistent section padding */
+
+/* Dark “app panel” container */
+
+/* ==========================================================================
+   LAYOUT UTILITIES — apply these as CSS classes on Elementor top containers
+   ========================================================================== */
+
+.ika-bg--light{ background: var(--ika-page-bg-light); }
+.ika-bg--dark{  background: var(--ika-page-bg-dark);  }
+
+.ika-shell{
+  max-width: var(--ika-w-default);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--ika-pad-x);
+  padding-right: var(--ika-pad-x);
+  width: 100%;
+}
+.ika-shell--wide{ max-width: var(--ika-w-wide); }
+.ika-shell--narrow{ max-width: var(--ika-w-narrow); }
+
+/* Consistent section padding */
+.ika-section{
+  padding-top: var(--ika-section-y);
+  padding-bottom: var(--ika-section-y);
+}
+.ika-section--tight{
+  padding-top: var(--ika-section-y-tight);
+  padding-bottom: var(--ika-section-y-tight);
+}
+
+.ika-panel{
+  background: var(--ika-panel-bg-dark);
+  border: 1px solid var(--ika-panel-border);
+  border-radius: 22px;
+}
+
 /* Utility helpers */
 .ika-hero-surface  { background-color: var(--ika-surface-100); }
 .ika-hero-accent   { color: var(--ika-amber-300); }
@@ -39,7 +124,6 @@
   background: radial-gradient(circle at 0 0, var(--ika-blue-400) 0, var(--ika-navy-800) 45%, var(--ika-navy-900) 100%);
 }
 */
-
 
 /* =========================================================
    GLOBAL / SHARED BASICS
@@ -73,7 +157,6 @@ img {
   font-weight: 600;
   color: #6B7280;
 }
-
 
 /* =========================================================
    ELEMENTOR – GLOBAL BUTTON STYLING
@@ -138,7 +221,6 @@ img {
   margin-left: 6px;
 }
 
-
 /* =========================================================
    HERO LAYOUT HELPERS (GENERAL)
    ========================================================= */
@@ -150,7 +232,6 @@ img {
 .hero-large .elementor-container {
   align-items: center;
 }
-
 
 /* =========================================================
    CARD COMPONENT (SHARED ACROSS SITE)
@@ -178,7 +259,6 @@ img {
 .ika-card .elementor-widget-icon .elementor-icon {
   margin-bottom: 16px;
 }
-
 
 /* =========================================================
    DARK SECTION COLORS (SAFE TWEAK ZONE)
@@ -214,7 +294,6 @@ img {
 .ika-dark a:hover {
   color: #93C5FD;
 }
-
 
 /* =========================================================
    FORM STYLING – GENERIC (.ika-form)
@@ -276,7 +355,6 @@ img {
   color: #DC2626;
 }
 
-
 /* =========================================================
    FOOTER SOCIAL ICONS (GLOBAL)
    ========================================================= */
@@ -303,7 +381,6 @@ img {
   border-color: #111827;
   transform: translateY(-1px);
 }
-
 
 /* =========================================================
    USERSWP – GLOBAL FORM & BUTTON STYLING
@@ -472,7 +549,6 @@ img {
   color: #98A7B6;
 }
 
-
 /* =========================================================
    IKA – XP LEADERBOARD
    ========================================================= */
@@ -542,7 +618,6 @@ img {
   color: #94A3B8;
 }
 
-
 /* =========================================================
    IKA – XP PROGRESS BAR
    ========================================================= */
@@ -604,7 +679,6 @@ img {
   font-weight: 500;
   color: #E5ECF5;
 }
-
 
 /* ============================================================
    IKA – ACHIEVEMENT / BADGE / RANK-UP MODALS
@@ -723,7 +797,6 @@ img {
   font-size: 0.9rem;
   color: #E5ECF5;
 }
-
 
 /* =========================================================
    DAILY MISSIONS – iKnowAviation
@@ -847,7 +920,6 @@ img {
   color: #F5F7FA;
 }
 
-
 /* =========================================================
    AVATAR LEVEL RING + LEVEL BADGE
    ========================================================= */
@@ -893,7 +965,6 @@ img {
   transform: scale(1.02);
   transition: transform 120ms ease-out;
 }
-
 
 /* ======================================================================
    FLIGHT DECK (Profile Hub) — SCOPED
@@ -1815,5 +1886,2166 @@ img {
 @media (max-width: 480px) {
   .ika-scope-flightdeck .ika-profile-hub .ika-hub-badge-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   QUIZ HUB (Quizzes Page) — SCOPED
+   Apply styles to pages/sections that include:
+   .ika-quiz-hub
+   ========================================================= */
+
+.ika-quiz-hub {
+  position: relative;
+}
+
+/* Track filter pills (Elementor Taxonomy Filter) */
+.ika-quiz-hub .ika-quiz-hub__filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.ika-quiz-hub .ika-quiz-hub__filter button,
+.ika-quiz-hub .ika-quiz-hub__filter a,
+.ika-quiz-hub .ika-quiz-hub__filter .e-filter {
+  border-radius: 999px !important;
+  padding: 9px 12px !important;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(2, 8, 24, 0.45);
+  color: rgba(255,255,255,0.92);
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.ika-quiz-hub .ika-quiz-hub__filter button:hover,
+.ika-quiz-hub .ika-quiz-hub__filter a:hover,
+.ika-quiz-hub .ika-quiz-hub__filter .e-filter:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 211, 115, 0.55);
+  background: rgba(26, 39, 64, 0.60);
+}
+
+/* Active pill */
+.ika-quiz-hub .ika-quiz-hub__filter .active,
+.ika-quiz-hub .ika-quiz-hub__filter .e-filter--active,
+.ika-quiz-hub .ika-quiz-hub__filter button[aria-pressed="true"] {
+  border-color: rgba(255, 211, 115, 0.85) !important;
+  background: rgba(255, 211, 115, 0.14) !important;
+}
+
+/* Optional: Search form inside hero */
+.ika-quiz-hub .ika-quiz-hub__search input[type="search"] {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  padding: 10px 12px;
+  background: rgba(2, 8, 24, 0.55);
+  color: rgba(255,255,255,0.92);
+}
+
+.ika-quiz-hub .ika-quiz-hub__search input[type="search"]:focus {
+  outline: none;
+  border-color: rgba(98, 169, 242, 0.75);
+  box-shadow: 0 0 0 1px rgba(98, 169, 242, 0.12);
+}
+
+/* Grid wrapper spacing */
+.ika-quiz-hub__gridwrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 10px 0px 20px;
+  /* padding: 42px 20px 70px; */
+}
+
+/* =========================================================
+   QUIZ CARD (Loop Item) — SCOPED
+   Class on Loop Item outer container: .ika-quiz-card
+   ========================================================= */
+
+.ika-quiz-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px 18px 16px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(26,39,64,0.10), rgba(13,19,31,0.04));
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, border-color 0.18s ease-out;
+}
+
+.ika-quiz-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.14);
+  border-color: rgba(98, 169, 242, 0.65);
+}
+
+.ika-quiz-card__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ika-quiz-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  font-family: "Montserrat", system-ui, sans-serif;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  background: rgba(245, 247, 250, 0.65);
+  color: #111827;
+}
+
+.ika-quiz-pill--diff {
+  border-color: rgba(255, 211, 115, 0.65);
+  background: rgba(255, 211, 115, 0.18);
+}
+
+.ika-quiz-card__title {
+  margin: 2px 0 0;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.ika-quiz-card__desc {
+  margin: 0;
+  color: #6B7280;
+  font-size: 14px;
+  line-height: 1.45;
+  min-height: 42px; /* keeps card heights aligned if some excerpts are empty */
+}
+
+.ika-quiz-card__meta {
+  margin-top: auto;
+  font-size: 12px;
+  color: #6B7280;
+  opacity: 0.95;
+}
+
+.ika-quiz-card__cta {
+  margin-top: 10px;
+}
+
+/* Responsive hero stacking */
+@media (max-width: 980px) {
+  .ika-quiz-hub .ika-quiz-hub__inner {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    padding: 56px 18px 52px;
+  }
+}
+
+/* =========================================================
+   QUIZ HUB — DARK VARIANT (Browse section + cards)
+   Add class: .ika-quiz-hub--dark on the Browse/grid section
+   ========================================================= */
+
+.ika-quiz-hub--dark {
+  background:
+    radial-gradient(1200px 500px at 25% 0%,
+      rgba(98,169,242,0.18),
+      rgba(13,19,31,0.96) 55%),
+    linear-gradient(180deg, rgba(2,8,24,0.98), rgba(13,19,31,0.98));
+  padding-top: 36px;
+  padding-bottom: 70px;
+}
+
+.ika-quiz-hub--dark h1,
+.ika-quiz-hub--dark h2,
+.ika-quiz-hub--dark h3,
+.ika-quiz-hub--dark p {
+  color: rgba(255,255,255,0.92);
+}
+
+/* Toolbar (filter pills + search) */
+.ika-quiz-toolbar {
+  margin-top: 16px;
+  padding: 12px 12px;
+  border-radius: 16px;
+  background: rgba(2, 8, 24, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  backdrop-filter: blur(8px);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ika-quiz-toolbar__left {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  min-width: 0;
+}
+
+.ika-quiz-toolbar__right {
+  min-width: 260px;
+}
+
+/* Make the search look like the mock */
+.ika-quiz-hub--dark .ika-quiz-hub__search input[type="search"] {
+  background: rgba(2,8,24,0.75);
+  border-color: rgba(148,163,184,0.28);
+}
+
+/* Cards become dark/premium inside the dark section */
+.ika-quiz-hub--dark .ika-quiz-card {
+  background: rgba(2, 8, 24, 0.58);
+  border-color: rgba(148, 163, 184, 0.22);
+  box-shadow: 0 18px 44px rgba(0,0,0,0.28);
+}
+
+.ika-quiz-hub--dark .ika-quiz-card:hover {
+  border-color: rgba(98,169,242,0.55);
+  box-shadow: 0 22px 55px rgba(0,0,0,0.38);
+}
+
+.ika-quiz-hub--dark .ika-quiz-card__title {
+  color: rgba(255,255,255,0.96);
+}
+
+.ika-quiz-hub--dark .ika-quiz-card__desc,
+.ika-quiz-hub--dark .ika-quiz-card__meta {
+  color: rgba(226,232,240,0.78);
+}
+
+/* Pills in dark mode */
+.ika-quiz-hub--dark .ika-quiz-pill {
+  background: rgba(13,19,31,0.72);
+  color: rgba(255,255,255,0.92);
+  border-color: rgba(255,255,255,0.16);
+}
+
+.ika-quiz-hub--dark .ika-quiz-pill--diff {
+  border-color: rgba(255, 211, 115, 0.55);
+  background: rgba(255, 211, 115, 0.16);
+}
+
+/* Optional: hide the hero right panel if you kept it */
+.ika-quiz-hub .ika-quiz-hub__right.is-hidden {
+  display: none !important;
+}
+
+/* Responsive toolbar stacking */
+@media (max-width: 820px) {
+  .ika-quiz-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .ika-quiz-toolbar__right {
+    min-width: 0;
+  }
+}
+
+/* ============================================================
+   IKA – GLOBAL TYPOGRAPHY BASELINE (fixes line-height issues)
+   ============================================================ */
+body {
+  line-height: 1.55;
+}
+
+.elementor-widget-text-editor,
+.elementor-widget-text-editor p {
+  line-height: 1.55;
+}
+
+h1, h2, h3, h4, h5, h6,
+.elementor-heading-title {
+  line-height: 1.12;
+}
+
+/* Prevent odd overlaps inside icon-list text */
+.elementor-icon-list-text {
+  line-height: 1.35;
+}
+
+/* ============================================================
+   IKA – QUIZ HUB HERO (full-bleed + centered)
+   Classes from your HTML:
+   .ika-quiz-hub, .ika-quiz-hub__inner, .ika-quiz-hub__left
+   ============================================================ */
+
+/* Full-bleed trick: make the hero background span the viewport
+   even if the page/container is boxed by theme defaults */
+.ika-quiz-hub__inner {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+
+  /* If Elementor background is set, this just improves it */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Dark overlay for readability */
+.ika-quiz-hub__inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(4, 9, 22, 0.70) 0%,
+    rgba(4, 9, 22, 0.55) 45%,
+    rgba(4, 9, 22, 0.25) 100%
+  );
+  pointer-events: none;
+}
+
+/* Ensure hero content sits above overlay */
+.ika-quiz-hub__left,
+.ika-quiz-hub__inner > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Center the hero content stack */
+.ika-quiz-hub__left {
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+  padding: 84px 20px;
+}
+
+/* Eyebrow */
+.ika-heading-eyebrow .elementor-heading-title {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 211, 115, 0.9);
+  margin-bottom: 10px;
+}
+
+/* Hero title */
+.ika-quiz-hub__left h1.elementor-heading-title {
+  font-size: clamp(34px, 4vw, 54px);
+  font-weight: 800;
+  color: #EAF2FF;
+  margin: 0 0 10px 0;
+  text-shadow: 0 10px 35px rgba(0,0,0,0.45);
+}
+
+/* Hero subtext */
+.ika-quiz-hub__left .elementor-widget-text-editor p {
+  font-size: 16px;
+  color: rgba(229, 236, 245, 0.86);
+  margin: 0 0 18px 0;
+}
+
+/* Hero icon list */
+.ika-quiz-hub__left .elementor-icon-list-items {
+  display: inline-flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 0 18px 0;
+  padding: 0;
+}
+.ika-quiz-hub__left .elementor-icon-list-icon svg {
+  width: 16px;
+  height: 16px;
+}
+.ika-quiz-hub__left .elementor-icon-list-text {
+  color: rgba(229, 236, 245, 0.92);
+  font-size: 14px;
+}
+
+/* Hero CTA button */
+.ika-quiz-hub__left .elementor-button {
+  background: #1D5CCB;
+  border-radius: 999px;
+  padding: 14px 22px;
+  font-weight: 700;
+  box-shadow: 0 14px 40px rgba(29, 92, 203, 0.35);
+}
+.ika-quiz-hub__left .elementor-button:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   IKA – QUIZ HUB SECTION BACKGROUND
+   ============================================================ */
+.ika-quiz-hub--dark {
+  background: radial-gradient(1200px 600px at 50% 0%, rgba(98,169,242,0.18) 0%, rgba(4,9,22,0) 65%),
+              linear-gradient(180deg, #071022 0%, #040916 100%);
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+/* ============================================================
+   IKA – TOOLBAR (taxonomy filter + search)
+   Classes from your HTML:
+   .ika-quiz-toolbar, .ika-quiz-hub__filter .e-filter-item, .ika-quiz-hub__search .e-search
+   ============================================================ */
+.ika-quiz-toolbar {
+  margin-top: 18px;
+  padding: 14px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(229,236,245,0.12);
+  background: rgba(6, 12, 28, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Filter row */
+.ika-quiz-hub__filter .e-filter {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Filter pills */
+.ika-quiz-hub__filter .e-filter-item {
+  border-radius: 999px;
+  padding: 10px 14px;
+  border: 1px solid rgba(229,236,245,0.14);
+  background: rgba(255,255,255,0.04);
+  color: rgba(229,236,245,0.78);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+
+.ika-quiz-hub__filter .e-filter-item:hover {
+  transform: translateY(-1px);
+  border-color: rgba(98,169,242,0.35);
+  background: rgba(98,169,242,0.10);
+}
+
+/* Active filter */
+.ika-quiz-hub__filter .e-filter-item[aria-pressed="true"] {
+  border-color: rgba(255,211,115,0.35);
+  background: rgba(255,211,115,0.14);
+  color: #FFD373;
+}
+
+/* Search */
+.ika-quiz-hub__search .e-search-form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.ika-quiz-hub__search .e-search-input-wrapper {
+  border-radius: 12px;
+  border: 1px solid rgba(229,236,245,0.14);
+  background: rgba(4,9,22,0.55);
+  overflow: hidden;
+}
+
+.ika-quiz-hub__search input.e-search-input {
+  min-width: 280px;
+  padding: 12px 14px;
+  color: rgba(234,242,255,0.92);
+}
+
+.ika-quiz-hub__search input.e-search-input::placeholder {
+  color: rgba(229,236,245,0.55);
+}
+
+.ika-quiz-hub__search button.e-search-submit {
+  border-radius: 12px;
+  padding: 12px 16px;
+  background: rgba(229,236,245,0.10);
+  border: 1px solid rgba(229,236,245,0.14);
+  color: rgba(229,236,245,0.90);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ika-quiz-hub__search button.e-search-submit:hover {
+  background: rgba(98,169,242,0.16);
+  border-color: rgba(98,169,242,0.35);
+}
+
+/* Mobile toolbar stacking */
+@media (max-width: 767px) {
+  .ika-quiz-hub__search input.e-search-input { min-width: 180px; }
+  .ika-quiz-toolbar { padding: 12px; }
+}
+
+/* ============================================================
+   IKA – QUIZ CARDS + PILLS
+   Classes from your HTML:
+   .ika-quiz-card, .ika-quiz-pill--track, .ika-quiz-pill--diff, .ika-btn-primary__cta
+   ============================================================ */
+
+.ika-quiz-card {
+  border-radius: 18px;
+  border: 1px solid rgba(229,236,245,0.12);
+  background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.03) 100%);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.35);
+  overflow: hidden;
+  transition: transform .14s ease, border-color .14s ease, box-shadow .14s ease;
+}
+
+.ika-quiz-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(98,169,242,0.30);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.45);
+}
+
+/* Make the boxed inner padding consistent */
+.ika-quiz-card .e-con-inner {
+  padding: 18px 18px 16px 18px;
+}
+
+/* Title */
+.ika-quiz-card__title .elementor-heading-title {
+  color: #EAF2FF;
+  font-weight: 800;
+  font-size: 22px;
+  margin: 8px 0 8px 0;
+}
+
+/* Meta line */
+.ika-quiz-card__meta {
+  color: rgba(229,236,245,0.65);
+  font-size: 13px;
+}
+
+/* Pills container */
+.ika-quiz-card__badges {
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Pills (track/difficulty) */
+.ika-quiz-pill .elementor-widget-container,
+.ika-quiz-pill p {
+  margin: 0 !important;
+}
+
+.ika-quiz-pill {
+  display: inline-flex;
+}
+
+.ika-quiz-pill .elementor-widget-container {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid rgba(229,236,245,0.14);
+  background: rgba(255,255,255,0.04);
+  color: rgba(229,236,245,0.78);
+}
+
+/* Track pill */
+.ika-quiz-pill--track .elementor-widget-container {
+  border-color: rgba(98,169,242,0.30);
+  background: rgba(98,169,242,0.10);
+  color: rgba(179, 213, 255, 0.95);
+}
+
+/* Difficulty pill */
+.ika-quiz-pill--diff .elementor-widget-container {
+  border-color: rgba(255,211,115,0.30);
+  background: rgba(255,211,115,0.12);
+  color: #FFD373;
+}
+
+/* Card button */
+.ika-btn-primary__cta .elementor-button {
+  width: 100%;
+  border-radius: 999px;
+  padding: 12px 16px;
+  background: rgba(29, 92, 203, 0.95);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 14px 40px rgba(29, 92, 203, 0.22);
+}
+
+.ika-btn-primary__cta .elementor-button:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   IKA – QUIZ HUB PATCH (Full-bleed hero + toolbar row + cards)
+   Paste at END of ika_master.css
+   ========================================================= */
+
+/* --- Global typography safety (fixes odd overlaps & over-bold headings) --- */
+body{
+  line-height: 1.55;
+}
+p, li{
+  line-height: 1.55;
+}
+
+/* HERO full-bleed: page section with ika-quiz-archive OR ika-quiz-hub */
+.ika-quiz-archive,
+.ika-quiz-hub{
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  border-radius: 0 !important;
+  overflow: hidden;
+  background-color: #0D131F;
+}
+.ika-quiz-archive .e-con-inner,
+.ika-quiz-archive .ika-quiz-hub__inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* If Elementor adds a background overlay, keep it subtle */
+.ika-quiz-archive .elementor-background-overlay{
+  opacity: 0.22 !important;
+}
+
+/* Hero text styling (scoped so it won’t wreck other pages) */
+.ika-quiz-archive .ika-quiz-hero__title .elementor-heading-title{
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-weight: 700 !important;          /* fixes “too bold” */
+  letter-spacing: -0.02em;
+  line-height: 1.06 !important;
+  text-shadow: 0 10px 35px rgba(0,0,0,0.35);
+}
+.ika-quiz-archive .ika-quiz-hero__sub{
+  max-width: 720px;
+}
+.ika-quiz-archive .ika-quiz-hub__left{
+  text-align: center;
+}
+.ika-quiz-archive .ika-quiz-hub__left .elementor-widget-container{
+  justify-content: center;
+}
+
+/* --- TOOLBAR: pills + search on ONE line (desktop) --- */
+@media (min-width: 981px){
+  .ika-quiz-toolbar{
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+  }
+  .ika-quiz-hub__filter{
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .ika-quiz-hub__filter .e-filter{
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .ika-quiz-hub__filter .e-filter::-webkit-scrollbar{ display:none; }
+
+  .ika-quiz-hub__search{
+    flex: 0 0 360px;
+  }
+  .ika-quiz-hub__search input.e-search-input{
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+}
+
+/* --- PILLS: more color + “premium” feel --- */
+.ika-quiz-pill .elementor-widget-container{
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(229,236,245,0.16);
+  color: rgba(234,242,255,0.88);
+}
+
+.ika-quiz-pill--track .elementor-widget-container{
+  background: rgba(98,169,242,0.18);
+  border-color: rgba(98,169,242,0.45);
+  color: rgba(210,232,255,0.96);
+}
+.ika-quiz-pill--diff .elementor-widget-container{
+  background: rgba(255,211,115,0.20);
+  border-color: rgba(255,211,115,0.55);
+  color: #FFD373;
+}
+
+/* --- CARDS: stronger glass + better spacing --- */
+.ika-quiz-card{
+  border-radius: 22px;
+  border-color: rgba(148,163,184,0.22);
+  background:
+    radial-gradient(900px 420px at 20% 0%,
+      rgba(98,169,242,0.14),
+      transparent 55%),
+    linear-gradient(180deg,
+      rgba(26,39,64,0.26),
+      rgba(2,8,24,0.74));
+  box-shadow: 0 18px 60px rgba(0,0,0,0.30);
+}
+.ika-quiz-card:hover{
+  border-color: rgba(98,169,242,0.40);
+  box-shadow: 0 28px 90px rgba(0,0,0,0.40);
+}
+
+/* Card CTA alignment like the mock */
+.ika-quiz-card__cta{
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+.ika-btn-primary__cta .elementor-button{
+  width: auto !important;
+  padding: 12px 18px;
+}
+
+.ika-quiz-archive .elementor-background-overlay,
+.ika-quiz-hub .elementor-background-overlay{
+  opacity: 0.18 !important;
+}
+
+.ika-quiz-archive .ika-quiz-hero__title .elementor-heading-title,
+.ika-quiz-hub .ika-quiz-hero__title .elementor-heading-title{
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+  line-height: 1.06 !important;
+}
+
+@media (min-width: 981px){
+  .ika-quiz-toolbar{ flex-wrap: nowrap !important; }
+  .ika-quiz-hub__filter{ flex: 1 1 auto; min-width: 0; }
+  .ika-quiz-hub__filter .e-filter{
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+  .ika-quiz-hub__filter .e-filter::-webkit-scrollbar{ display:none; }
+  .ika-quiz-hub__search{ flex: 0 0 360px; }
+}
+
+/* =========================================================
+   IKA – QUIZ HUB HERO (NO left/right columns)
+   Requires:
+   .ika-quiz-hub (outer hero container)
+   .ika-quiz-hub__inner (inner container holding all text/widgets)
+   ========================================================= */
+
+/* Keep the hero full-bleed (you already have this pattern in the file) */
+.ika-quiz-hub .ika-quiz-hub__inner{
+  /* override the old grid layout */
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+
+  /* sizing */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 84px 20px 74px;
+
+  position: relative;
+  z-index: 2; /* above overlay */
+}
+
+/* Overlay: keep subtle so image doesn't get crushed */
+.ika-quiz-hub::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(4, 9, 22, 0.18) 0%,
+    rgba(4, 9, 22, 0.30) 55%,
+    rgba(4, 9, 22, 0.40) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Make sure the outer hero container can host the overlay */
+
+/* Apply the old “left container” text styling to the INNER container instead */
+.ika-quiz-hub .ika-quiz-hub__inner .elementor-heading-title{
+  color: #ffffff;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* Description text */
+.ika-quiz-hub .ika-quiz-hub__inner .elementor-widget-text-editor{
+  color: rgba(255,255,255,0.88);
+}
+
+/* Keep hero paragraph widths nice while centered */
+.ika-quiz-hub .ika-quiz-hub__inner .elementor-widget-text-editor p{
+  max-width: 62ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Icon list readability */
+.ika-quiz-hub .ika-quiz-hub__inner .elementor-icon-list-item,
+.ika-quiz-hub .ika-quiz-hub__inner .elementor-icon-list-text{
+  color: rgba(255,255,255,0.90);
+}
+
+/* CTA spacing */
+.ika-quiz-hub .ika-quiz-hub__inner .elementor-widget-button{
+  margin-top: 8px;
+}
+
+/* Responsive tightening */
+@media (max-width: 768px){
+  .ika-quiz-hub .ika-quiz-hub__inner{
+    padding: 64px 16px 58px;
+  }
+}
+
+/* =========================================================
+   IKA – QUIZ HUB HERO FIX (remove overlay + restore typography)
+   Scoped to Quizzes hero only
+   Requires:
+   - outer hero container: .ika-quiz-hub
+   - inner hero container: .ika-quiz-hub__inner
+   ========================================================= */
+
+/* 1) Kill ALL overlays on the hero (CSS + Elementor overlay) */
+.ika-quiz-hub::before,
+.ika-quiz-hub__inner::before{
+  content: none !important;
+  display: none !important;
+}
+
+/* 2) Ensure hero is the positioning context */
+
+/* 3) Center the inner stack and give it proper spacing */
+
+/* 4) Eyebrow (QUIZ HUB) */
+.ika-quiz-hub .ika-quiz-hero__eyebrow .elementor-heading-title,
+.ika-quiz-hub .ika-heading-eyebrow .elementor-heading-title{
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 211, 115, 0.92);
+  margin: 0 0 10px 0;
+}
+
+/* 5) Main title */
+.ika-quiz-hub .ika-quiz-hero__title .elementor-heading-title{
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: clamp(36px, 4.2vw, 56px);
+  font-weight: 700;                 /* not “extra bold” */
+  letter-spacing: -0.02em;
+  line-height: 1.06;
+  color: #FFFFFF;
+  margin: 0 0 12px 0;
+  text-shadow: 0 12px 34px rgba(0,0,0,0.35);
+}
+
+/* 6) Subtitle / description */
+.ika-quiz-hub .ika-quiz-hero__sub .elementor-widget-text-editor,
+.ika-quiz-hub .ika-quiz-hero__sub p,
+.ika-quiz-hub .ika-quiz-hub__inner .elementor-widget-text-editor p{
+  font-size: 16px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.86);
+  max-width: 64ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 7) Icon list row */
+
+/* 8) CTA button sizing */
+
+/* 9) Responsive spacing */
+
+/* =========================================================
+   IKA – HEADING RESET FIX (stop shrinking headings)
+   This neutralizes the global "font-size: inherit !important" rule
+   without breaking the rest of your site.
+   ========================================================= */
+
+/* Undo ONLY the font-size/font-weight inherit behavior */
+.elementor-widget-heading .elementor-heading-title{
+  font-size: unset !important;
+  font-weight: unset !important;
+  line-height: 1.12 !important; /* keep your tight heading rhythm */
+}
+
+/* If your theme forces tiny heading defaults, define sane site-wide heading sizes */
+h1.elementor-heading-title{ font-size: clamp(32px, 3.4vw, 52px); }
+h2.elementor-heading-title{ font-size: clamp(24px, 2.4vw, 36px); }
+h3.elementor-heading-title{ font-size: clamp(18px, 1.8vw, 26px); }
+
+/* =========================================================
+   IKA – QUIZ HUB HERO (Final, clean, centered)
+   Requires classes:
+   .ika-quiz-hub, .ika-quiz-hub__inner
+   and widget classes:
+   .ika-quiz-hero__eyebrow, .ika-quiz-hero__title, .ika-quiz-hero__sub
+   ========================================================= */
+
+/* Kill overlays on this hero (Elementor overlay + prior CSS overlays) */
+.ika-quiz-hub::before,
+.ika-quiz-hub__inner::before{ content:none !important; display:none !important; }
+.ika-quiz-hub .elementor-background-overlay{
+  opacity: 0 !important;
+  background: none !important;
+}
+
+/* Layout / centering */
+.ika-quiz-hub{
+  position: relative;
+  overflow: hidden;
+}
+.ika-quiz-hub .ika-quiz-hub__inner{
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 92px 20px 82px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.ika-quiz-hub .ika-quiz-hero__eyebrow .elementor-heading-title{
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 211, 115, 0.92);
+  margin: 0 0 10px 0;
+}
+
+/* Main title */
+.ika-quiz-hub .ika-quiz-hero__title .elementor-heading-title{
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: clamp(36px, 4.2vw, 56px);
+  font-weight: 700;               /* not overly bold */
+  letter-spacing: -0.02em;
+  line-height: 1.06;
+  color: #FFFFFF;
+  margin: 0 0 12px 0;
+  text-shadow: 0 12px 34px rgba(0,0,0,0.35);
+}
+
+/* Subtitle */
+.ika-quiz-hub .ika-quiz-hero__sub .elementor-widget-text-editor,
+.ika-quiz-hub .ika-quiz-hero__sub p{
+  font-size: 16px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.86);
+  max-width: 64ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Icon list row polish */
+.ika-quiz-hub .ika-quiz-hub__inner .elementor-icon-list-items{
+  display: inline-flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px 0 18px 0;
+  padding: 0;
+}
+.ika-quiz-hub .ika-quiz-hub__inner .elementor-icon-list-text{
+  font-size: 14px;
+  color: rgba(255,255,255,0.90);
+}
+
+/* CTA */
+.ika-quiz-hub .ika-quiz-hub__inner .elementor-button{
+  padding: 14px 22px;
+}
+
+/* Responsive */
+@media (max-width: 768px){
+  .ika-quiz-hub .ika-quiz-hub__inner{
+    padding: 72px 16px 62px;
+  }
+}
+
+/* =========================================================
+   IKA – QUIZ HERO TITLE SIZE FIX (FINAL OVERRIDE)
+   Paste at the VERY END of ika_master.css
+   ========================================================= */
+
+/* 1) Stop any remaining "inherit" heading shrink rules */
+.elementor-widget-heading .elementor-heading-title{
+  font-size: revert !important;
+  font-weight: revert !important;
+}
+
+/* 2) Quiz Hub hero title: make it match the mock */
+.ika-quiz-hub .ika-quiz-hero__title .elementor-heading-title{
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: clamp(40px, 4.6vw, 64px) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+  line-height: 1.05 !important;
+  color: #FFFFFF;
+  margin: 0 0 12px 0;
+  text-shadow: 0 12px 34px rgba(0,0,0,0.32);
+}
+
+/* 3) Optional: keep eyebrow consistent even if class names vary */
+.ika-quiz-hub .ika-quiz-hero__eyebrow .elementor-heading-title,
+.ika-quiz-hub .ika-heading-eyebrow .elementor-heading-title{
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 211, 115, 0.92);
+}
+
+/* =========================================================
+   QUIZ HUB — TOOLBAR ROW (one-line pills + search)
+   Paste at END of ika_master.css
+   ========================================================= */
+
+/* Reduce the "gap" between hero and Browse section */
+.ika-quiz-hub--dark{
+  padding-top: 18px;   /* was 36px */
+}
+
+/* If your Browse heading container has extra top margin from Elementor,
+   this helps tighten it without affecting other pages */
+.ika-quiz-hub--dark .elementor-widget-heading{
+  margin-top: 0 !important;
+}
+
+/* Toolbar = single row */
+.ika-quiz-toolbar{
+  margin-top: 12px;                 /* slightly tighter */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: nowrap;                /* key: keep one line */
+}
+
+/* Left side: allow growth + horizontal scroll for future taxonomies */
+.ika-quiz-toolbar__left{
+  flex: 1 1 auto;                   /* take remaining space */
+  min-width: 0;                     /* allows overflow scroll */
+  display: flex;
+  flex-wrap: nowrap;                /* key: no wrapping */
+  gap: 10px;
+  overflow-x: auto;                 /* scroll if many pills */
+  overflow-y: hidden;
+  padding-bottom: 2px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Optional: nicer slim scrollbar */
+
+.ika-quiz-toolbar__left::-webkit-scrollbar-thumb{
+  background: rgba(148,163,184,0.25);
+  border-radius: 999px;
+}
+
+/* Right side: fixed-ish search block */
+.ika-quiz-toolbar__right{
+  flex: 0 0 360px;                  /* stable width */
+  max-width: 420px;
+  min-width: 300px;
+}
+
+/* Search row: input + button styled like mock */
+.ika-quiz-hub__search form{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.ika-quiz-hub__search input[type="search"],
+.ika-quiz-hub__search input[type="text"]{
+  height: 40px;
+  width: 100%;
+  border-radius: 999px;
+  padding: 0 16px;
+  background: rgba(2,8,24,0.70);
+  border: 1px solid rgba(148,163,184,0.28);
+  color: rgba(255,255,255,0.92);
+  outline: none;
+}
+
+.ika-quiz-hub__search input::placeholder{
+  color: rgba(203,213,225,0.65);
+}
+
+/* Search button matches your pill/button language */
+.ika-quiz-hub__search button,
+.ika-quiz-hub__search input[type="submit"]{
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.28);
+  background: rgba(15,23,42,0.85);
+  color: rgba(255,255,255,0.92);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.ika-quiz-hub__search button:hover,
+.ika-quiz-hub__search input[type="submit"]:hover{
+  filter: brightness(1.08);
+}
+
+/* Mobile: allow wrapping so it doesn’t break layout */
+@media (max-width: 820px){
+  .ika-quiz-toolbar{
+    flex-wrap: wrap;
+  }
+  .ika-quiz-toolbar__right{
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+  .ika-quiz-toolbar__left{
+    flex: 1 1 100%;
+  }
+}
+
+/* =========================================================
+   QUIZ HUB — BROWSE + TOOLBAR FIX (ONE LINE + MOCK SEARCH)
+   Paste at VERY END of ika_master.css
+   Targets your existing HTML/classes:
+   .ika-quiz-hub--dark, .ika-quiz-toolbar, __left/__right,
+   .ika-quiz-hub__filter (.e-filter), .ika-quiz-hub__search (.e-search)
+   ========================================================= */
+
+/* 1) Reduce the gap between HERO and the Browse section */
+.ika-quiz-hub--dark{
+  padding-top: 14px !important; /* tighten top */
+}
+
+/* If Elementor is adding extra top margin above Browse title */
+.ika-quiz-hub--dark .elementor-element-c56018d{
+  margin-top: 0 !important;
+}
+.ika-quiz-hub--dark .elementor-element-914b8e2{
+  margin-top: 0 !important;
+}
+
+/* 2) TOOLBAR: keep everything on ONE row (desktop) */
+.ika-quiz-toolbar{
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 14px !important;
+  flex-wrap: nowrap !important; /* key */
+}
+
+/* Elementor containers sometimes default to column — force row */
+.ika-quiz-toolbar__left,
+.ika-quiz-toolbar__right{
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+}
+
+/* 3) LEFT: pills get room to grow (no wrapping; scroll if needed) */
+.ika-quiz-toolbar__left{
+  flex: 1 1 auto !important;
+  min-width: 0 !important;            /* allows overflow scroll */
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 2px;                /* makes scrollbar not clip */
+  gap: 10px !important;
+  flex-wrap: nowrap !important;
+}
+
+/* Scrollbar styling (subtle) */
+.ika-quiz-toolbar__left::-webkit-scrollbar{ height: 6px; }
+.ika-quiz-toolbar__left::-webkit-scrollbar-thumb{
+  background: rgba(148,163,184,0.22);
+  border-radius: 999px;
+}
+
+/* The actual filter <search class="e-filter"> */
+.ika-quiz-hub__filter .e-filter{
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: nowrap !important;        /* key */
+  white-space: nowrap !important;      /* key */
+  margin: 0 !important;
+}
+
+/* Ensure pills don’t stretch full width */
+.ika-quiz-hub__filter .e-filter-item{
+  flex: 0 0 auto !important;
+}
+
+/* 4) RIGHT: search stays compact and aligned */
+.ika-quiz-toolbar__right{
+  flex: 0 0 auto !important;
+  justify-content: flex-end !important;
+}
+
+/* Control the search block width on desktop */
+@media (min-width: 981px){
+  .ika-quiz-toolbar__right{
+    width: 380px;
+    max-width: 420px;
+  }
+}
+
+/* 5) Search styling to match your mock (smaller + rounded button) */
+.ika-quiz-hub__search .e-search{
+  width: 100%;
+}
+.ika-quiz-hub__search .e-search-form{
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  width: 100%;
+}
+
+/* Input wrapper (Elementor adds this div) */
+.ika-quiz-hub__search .e-search-input-wrapper{
+  flex: 1 1 auto;
+  min-width: 0;
+  border-radius: 999px !important;
+  border: 1px solid rgba(148,163,184,0.28) !important;
+  background: rgba(2,8,24,0.70) !important;
+  overflow: hidden; /* keeps the input rounded */
+}
+
+/* Input itself */
+.ika-quiz-hub__search input.e-search-input{
+  width: 100% !important;
+  height: 40px !important;            /* smaller */
+  padding: 0 16px !important;
+  border: none !important;            /* wrapper handles border */
+  background: transparent !important;
+  color: rgba(255,255,255,0.92) !important;
+  outline: none !important;
+}
+
+.ika-quiz-hub__search input.e-search-input::placeholder{
+  color: rgba(203,213,225,0.65) !important;
+}
+
+/* Button */
+.ika-quiz-hub__search button.e-search-submit{
+  height: 40px !important;            /* smaller */
+  padding: 0 18px !important;
+  border-radius: 999px !important;    /* match your other buttons */
+  border: 1px solid rgba(148,163,184,0.28) !important;
+  background: rgba(15,23,42,0.85) !important;
+  color: rgba(255,255,255,0.92) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  cursor: pointer;
+}
+
+.ika-quiz-hub__search button.e-search-submit:hover{
+  filter: brightness(1.08);
+  border-color: rgba(98,169,242,0.35) !important;
+  background: rgba(98,169,242,0.14) !important;
+}
+
+.ika-quiz-hub__search .e-search-input-wrapper:focus-within{
+  border-color: rgba(98,169,242,0.55) !important;
+  box-shadow: 0 0 0 1px rgba(98,169,242,0.14);
+}
+
+/* 6) Mobile: allow stacking (so it doesn’t overflow) */
+@media (max-width: 820px){
+  .ika-quiz-toolbar{
+    flex-wrap: wrap !important;
+  }
+  .ika-quiz-toolbar__left{
+    flex: 1 1 100% !important;
+  }
+  .ika-quiz-toolbar__right{
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .ika-quiz-hub__search button.e-search-submit{
+    white-space: nowrap;
+  }
+}
+
+/* =========================================================
+   QUIZ HUB — SEARCH TEXT SIZE ALIGNMENT
+   ========================================================= */
+
+/* Match search text size to taxonomy pills */
+.ika-quiz-hub__search input.e-search-input{
+  font-size: 12px !important;
+  letter-spacing: 0.04em;
+  text-transform: none; /* keep normal case for usability */
+}
+
+/* Placeholder slightly lighter, same size */
+.ika-quiz-hub__search input.e-search-input::placeholder{
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: rgba(203,213,225,0.60);
+}
+
+/* Search button text already matches pills, but ensure size parity */
+.ika-quiz-hub__search button.e-search-submit{
+  font-size: 12px !important;
+  letter-spacing: 0.06em;
+}
+
+/* =========================================================
+   QUIZ HUB — BROWSE SECTION SPACING (scoped + reusable)
+   ========================================================= */
+
+.ika-quiz-browse{
+  padding-top: 16px;
+}
+
+.ika-quiz-browse .elementor-widget-text-editor{
+  margin-bottom: 14px;
+}
+
+/* =========================================================
+   QUIZ HUB — BROWSE SECTION SPACING TUNING
+   ========================================================= */
+
+/* Reduce gap between hero and Browse Quizzes */
+.ika-quiz-browse{
+  margin-top: -12px;   /* pulls section slightly upward */
+  padding-top: 24px;  /* keeps internal breathing room */
+  padding-bottom: 24px;
+}
+
+/* Tighten spacing under Browse Quizzes heading */
+.ika-quiz-browse .elementor-widget-heading{
+  margin-bottom: 6px;
+}
+
+/* Tighten spacing under subtitle */
+.ika-quiz-browse .elementor-widget-text-editor{
+  margin-bottom: 12px;
+}
+
+/* Reduce gap between toolbar and cards grid */
+.ika-quiz-toolbar{
+  margin-bottom: 20px;
+}
+
+/* =========================================================
+   QUIZ HUB — SEARCH INPUT HEIGHT REFINEMENT
+   ========================================================= */
+
+.ika-quiz-hub__search input.e-search-input{
+  height: 40px;
+  padding: 0 14px;
+  line-height: 40px;
+}
+
+/* Keep button slightly shorter for visual hierarchy */
+.ika-quiz-hub__search button.e-search-submit{
+  height: 36px;
+  padding: 0 18px;
+  line-height: 36px;
+}
+
+/* =========================================================
+   QUIZ HUB — VERTICAL SPACING COMPRESSION (FINAL)
+   ========================================================= */
+
+/* Pull Browse section closer to hero */
+.ika-quiz-browse {
+  margin-top: -24px;        /* stronger pull-up */
+  padding-top: 16px;       /* reduced internal padding */
+  padding-bottom: 12px;
+}
+
+/* Tighten heading → toolbar relationship */
+.ika-quiz-browse h2,
+.ika-quiz-browse .elementor-heading-title {
+  margin-bottom: 4px;
+}
+
+/* Tighten subtitle spacing */
+.ika-quiz-browse .elementor-widget-text-editor {
+  margin-bottom: 10px;
+}
+
+/* Toolbar should not push content down */
+.ika-quiz-toolbar {
+  margin-bottom: 12px;
+}
+
+/* Cards should start immediately after toolbar */
+.ika-quiz-grid,
+.ika-quiz-cards,
+.elementor-loop-grid {
+  margin-top: 8px !important;
+}
+
+/* =========================================================
+   QUIZ CARDS — v2 polish (safe overrides)
+   Paste at END of ika_master.css
+   ========================================================= */
+
+/* Card shell */
+.ika-quiz-hub--dark .ika-quiz-card{
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background:
+    radial-gradient(1200px 500px at 20% 0%, rgba(98,169,242,0.14), transparent 55%),
+    radial-gradient(900px 420px at 90% 20%, rgba(255,211,115,0.10), transparent 55%),
+    rgba(6,12,26,0.60);
+  box-shadow:
+    0 18px 44px rgba(0,0,0,0.42),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.ika-quiz-hub--dark .ika-quiz-card:hover{
+  transform: translateY(-4px);
+  border-color: rgba(98,169,242,0.22);
+  box-shadow:
+    0 22px 58px rgba(0,0,0,0.50),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+/* Subtle sheen overlay */
+.ika-quiz-hub--dark .ika-quiz-card::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(98,169,242,0.14), rgba(255,211,115,0.10), transparent 60%);
+  opacity: .9;
+  pointer-events:none;
+}
+
+/* Inner spacing */
+.ika-quiz-hub--dark .ika-quiz-card .e-con-inner{
+  position: relative;
+  padding: 22px;
+  min-height: 190px;
+}
+
+/* Title + meta */
+.ika-quiz-hub--dark .ika-quiz-card__title{
+  margin: 10px 0 6px;
+  font-size: 22px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: rgba(255,255,255,0.95);
+}
+
+.ika-quiz-hub--dark .ika-quiz-card__meta{
+  margin: 0 0 14px;
+  font-size: 13px;
+  line-height: 1.35;
+  color: rgba(255,255,255,0.62);
+}
+
+/* Badge row */
+.ika-quiz-hub--dark .ika-quiz-card__badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 8px;
+  min-height: 30px; /* ensures top area never looks “empty” */
+  margin-bottom: 6px;
+}
+
+/* If there are NO pills, auto-add two default pills */
+.ika-quiz-hub--dark .ika-quiz-card__badges:empty::before,
+.ika-quiz-hub--dark .ika-quiz-card__badges:empty::after{
+  display:inline-flex;
+  align-items:center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.80);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.07);
+  content:"Quick Quiz";
+}
+
+.ika-quiz-hub--dark .ika-quiz-card__badges:empty::after{
+  content:"All Levels";
+  border-color: rgba(255,211,115,0.35);
+  background: rgba(255,211,115,0.14);
+  color: rgba(255,244,214,0.95);
+}
+
+/* Pills — punchier color */
+
+.ika-quiz-hub--dark .ika-quiz-pill--track{
+  border-color: rgba(98,169,242,0.40);
+  background: rgba(98,169,242,0.16);
+  color: rgba(210,233,255,0.95);
+}
+
+.ika-quiz-hub--dark .ika-quiz-pill--diff{
+  border-color: rgba(255,211,115,0.48);
+  background: rgba(255,211,115,0.18);
+  color: rgba(255,244,214,0.98);
+}
+
+/* Button — match mockup proportions and placement */
+.ika-quiz-hub--dark .ika-btn-primary__cta{
+  margin-top: 16px;
+  text-align: left !important;
+}
+
+.ika-quiz-hub--dark .ika-btn-primary__cta .elementor-button{
+  border-radius: 999px !important;
+  padding: 12px 22px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.02em;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+}
+
+/* Optional: place button bottom-right like mockup (works if your inner column layout allows it) */
+.ika-quiz-hub--dark .ika-btn-primary__cta{
+  display:flex;
+  justify-content:flex-end;
+}
+
+/* =========================================================
+   FUTURE: Taken / In-Progress / New status (won’t show until you add these classes later)
+   - Add class on loop item OR card wrapper later via backend:
+     .ika-quiz-card.is-complete
+     .ika-quiz-card.is-started
+     .ika-quiz-card.is-new
+   ========================================================= */
+
+.ika-quiz-hub--dark .ika-quiz-card.is-complete{
+  border-color: rgba(67, 250, 167, 0.22);
+}
+.ika-quiz-hub--dark .ika-quiz-card.is-complete::after{
+  content:"COMPLETED";
+  position:absolute;
+  top: 14px;
+  right: 14px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  border: 1px solid rgba(67, 250, 167, 0.35);
+  background: rgba(67, 250, 167, 0.14);
+  color: rgba(216, 255, 238, 0.98);
+}
+
+.ika-quiz-hub--dark .ika-quiz-card.is-started::after{
+  content:"IN PROGRESS";
+  position:absolute;
+  top: 14px;
+  right: 14px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  border: 1px solid rgba(98,169,242,0.35);
+  background: rgba(98,169,242,0.14);
+  color: rgba(210,233,255,0.98);
+}
+
+.ika-quiz-hub--dark .ika-quiz-card.is-new::after{
+  content:"NEW";
+  position:absolute;
+  top: 14px;
+  right: 14px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  border: 1px solid rgba(255,211,115,0.42);
+  background: rgba(255,211,115,0.18);
+  color: rgba(255,244,214,0.98);
+}
+
+/* =========================================================
+   QUIZ CARDS — difficulty pill (clean + readable)
+   ========================================================= */
+
+.ika-quiz-hub--dark .ika-quiz-pill--diff{
+  border-color: rgba(255,211,115,0.35) !important;
+  background: rgba(255,211,115,0.12) !important;
+  color: rgba(255,244,214,0.95) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+/* If Elementor is making the text blue/purple, force it */
+.ika-quiz-hub--dark .ika-quiz-pill--diff,
+.ika-quiz-hub--dark .ika-quiz-pill--diff *{
+  color: rgba(255,244,214,0.95) !important;
+}
+
+/* =========================================================
+   QUIZ HUB — align toolbar + cards to same width
+   ========================================================= */
+
+.ika-quiz-browse,
+.ika-quiz-toolbar,
+.elementor-loop-grid{
+  max-width: 1200px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Ensure the toolbar doesn't stretch wider */
+.ika-quiz-toolbar{
+  width: 100% !important;
+}
+
+/* =========================================================
+   QUIZ CARDS — remove button tray/well
+   ========================================================= */
+
+.ika-quiz-hub--dark .ika-btn-primary__cta{
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  margin-top: 16px;
+}
+
+/* Keep button centered if you want that look */
+.ika-quiz-hub--dark .ika-btn-primary__cta{
+  display: flex;
+  justify-content: center;
+}
+
+/* =========================================================
+   QUIZ CARDS — FORCE BADGES LEFT (override Elementor)
+   ========================================================= */
+
+/* Badge row: always left */
+.ika-quiz-hub--dark .ika-quiz-card__badges{
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  text-align: left !important;
+  width: 100% !important;
+}
+
+/* If Elementor put the badges inside a centered container, force that container left */
+.ika-quiz-hub--dark .ika-quiz-card__badges.elementor-widget,
+.ika-quiz-hub--dark .ika-quiz-card__badges .elementor-widget-container,
+.ika-quiz-hub--dark .ika-quiz-card__badges .e-con,
+.ika-quiz-hub--dark .ika-quiz-card__badges .e-con-inner{
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+/* Kill any auto-centering margins on the pill widgets */
+.ika-quiz-hub--dark .ika-quiz-card__badges .ika-quiz-pill{
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* =========================================================
+   QUIZ CARDS — REMOVE BUTTON WELL / TRAY COMPLETELY
+   ========================================================= */
+
+.ika-quiz-hub--dark .ika-btn-primary__cta,
+.ika-quiz-hub--dark .ika-btn-primary__cta .elementor-widget-container{
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  padding: 0 !important;
+}
+
+/* If there is an inner wrapper around the button */
+.ika-quiz-hub--dark .ika-btn-primary__cta .elementor-button-wrapper{
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Keep button clean (you can keep a subtle shadow on the button if you like) */
+.ika-quiz-hub--dark .ika-btn-primary__cta .elementor-button{
+  box-shadow: 0 12px 28px rgba(0,0,0,0.35) !important;
+}
+
+/* Center it (since you like that) */
+.ika-quiz-hub--dark .ika-btn-primary__cta{
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* =========================================================
+   QUIZ CARDS — Difficulty pill (brighter gold)
+   ========================================================= */
+
+.ika-quiz-hub--dark .ika-quiz-pill--diff{
+  border-color: rgba(255, 215, 130, 0.55);
+  background: rgba(255, 215, 130, 0.22);
+  color: rgba(255, 248, 230, 0.98);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.15),
+    0 4px 14px rgba(255, 215, 130, 0.15);
+}
+
+/* =========================================================
+   QUIZ CARDS — v3 polish
+   1) Subtle hover pop (sheen + lift)
+   2) Difficulty pill system (low emphasis)
+   3) Status states (NEW / IN PROGRESS / COMPLETED) — Option C
+   Paste at END of ika_master.css
+   ========================================================= */
+
+/* ---------- Base card polish (subtle “pop”) ---------- */
+
+.ika-quiz-hub--dark .ika-quiz-card{
+  position: relative;
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.ika-quiz-hub--dark .ika-quiz-card:hover{
+  transform: translateY(-3px);
+  border-color: rgba(98,169,242,0.22);
+  box-shadow:
+    0 22px 58px rgba(0,0,0,0.52),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+/* Soft diagonal sheen (only visible on hover) */
+.ika-quiz-hub--dark .ika-quiz-card::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg,
+    rgba(98,169,242,0.00) 0%,
+    rgba(98,169,242,0.10) 28%,
+    rgba(255,211,115,0.08) 55%,
+    rgba(255,211,115,0.00) 80%
+  );
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .18s ease, transform .18s ease;
+  pointer-events:none;
+}
+
+.ika-quiz-hub--dark .ika-quiz-card:hover::before{
+  opacity: .95;
+  transform: translateY(0);
+}
+
+/* ---------- Pills: shared baseline ---------- */
+
+.ika-quiz-hub--dark .ika-quiz-pill{
+  display:inline-flex;
+  align-items:center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.86);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+/* Track pill stays a bit stronger */
+.ika-quiz-hub--dark .ika-quiz-pill--track{
+  border-color: rgba(98,169,242,0.40);
+  background: rgba(98,169,242,0.14);
+  color: rgba(210,233,255,0.95);
+}
+
+/* ---------- Difficulty pill system (LOW emphasis) ---------- */
+/* Default difficulty pill: lighter + less glow (your request) */
+.ika-quiz-hub--dark .ika-quiz-pill--diff{
+  border-color: rgba(255,211,115,0.32);
+  background: rgba(255,211,115,0.10);
+  color: rgba(255,244,214,0.92);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08); /* no outer glow */
+}
+
+/* Optional: specific difficulty variants (use later if you want)
+   Add one of these classes to the difficulty pill:
+   ika-quiz-pill--beginner / --intermediate / --advanced / --expert
+*/
+.ika-quiz-hub--dark .ika-quiz-pill--diff.ika-quiz-pill--beginner{
+  border-color: rgba(255,211,115,0.32);
+  background: rgba(255,211,115,0.10);
+  color: rgba(255,244,214,0.92);
+}
+
+.ika-quiz-hub--dark .ika-quiz-pill--diff.ika-quiz-pill--intermediate{
+  border-color: rgba(98,169,242,0.26);
+  background: rgba(98,169,242,0.08);
+  color: rgba(210,233,255,0.88);
+}
+
+.ika-quiz-hub--dark .ika-quiz-pill--diff.ika-quiz-pill--advanced{
+  border-color: rgba(255,165,90,0.26);
+  background: rgba(255,165,90,0.08);
+  color: rgba(255,236,222,0.88);
+}
+
+.ika-quiz-hub--dark .ika-quiz-pill--diff.ika-quiz-pill--expert{
+  border-color: rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.88);
+}
+
+/* ---------- Status system (Option C) ---------- */
+/* These do nothing until you add classes later:
+   .is-new / .is-started / .is-complete  on .ika-quiz-card
+*/
+.ika-quiz-hub--dark .ika-quiz-card.is-new{
+  border-color: rgba(255,211,115,0.22);
+}
+
+.ika-quiz-hub--dark .ika-quiz-card.is-started{
+  border-color: rgba(98,169,242,0.22);
+}
+
+.ika-quiz-hub--dark .ika-quiz-card.is-complete{
+  border-color: rgba(67,250,167,0.22);
+}
+
+/* Status chip (top-right) */
+.ika-quiz-hub--dark .ika-quiz-card.is-new::after,
+.ika-quiz-hub--dark .ika-quiz-card.is-started::after,
+.ika-quiz-hub--dark .ika-quiz-card.is-complete::after{
+  position:absolute;
+  top: 14px;
+  right: 14px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.86);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+  content: "";
+}
+
+.ika-quiz-hub--dark .ika-quiz-card.is-new::after{
+  content:"NEW";
+  border-color: rgba(255,211,115,0.34);
+  background: rgba(255,211,115,0.12);
+  color: rgba(255,244,214,0.95);
+}
+
+.ika-quiz-hub--dark .ika-quiz-card.is-started::after{
+  content:"IN PROGRESS";
+  border-color: rgba(98,169,242,0.34);
+  background: rgba(98,169,242,0.12);
+  color: rgba(210,233,255,0.95);
+}
+
+.ika-quiz-hub--dark .ika-quiz-card.is-complete::after{
+  content:"COMPLETED";
+  border-color: rgba(67,250,167,0.34);
+  background: rgba(67,250,167,0.12);
+  color: rgba(216,255,238,0.98);
+}
+
+/* ==========================================================================
+   QUIZ HUB — TOOLBAR + GRID WRAPPER (final alignment + spacing)
+   Targets:
+   - Toolbar: .ika-quiz-toolbar
+   - Grid wrap: .ika-quiz-hub__gridwrap
+   ========================================================================== */
+
+/* 1) Make toolbar + grid share the SAME width */
+.ika-quiz-toolbar,
+.ika-quiz-hub__gridwrap{
+  max-width: var(--ika-w-wide);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--ika-pad-x);
+  padding-right: var(--ika-pad-x);
+  width: 100%;
+}
+
+/* 2) Reduce vertical spacing between hero → browse → toolbar → cards */
+.ika-quiz-toolbar{
+  margin-top: 16px;   /* was too tall */
+  margin-bottom: 18px;
+}
+
+/* If your Browse section wrapper exists, this helps tighten it.
+   (Safe: only affects this page if it’s inside your quiz hub wrapper.) */
+.ika-quiz-hub .ika-browse,
+.ika-quiz-hub .ika-browse-wrap,
+.ika-quiz-hub .ika-browse-quizzes{
+  margin-top: 18px;
+  margin-bottom: 14px;
+}
+
+/* 3) Grid spacing (less scroll, still breathable) */
+.ika-quiz-hub__gridwrap{
+  padding-top: 8px;
+  padding-bottom: 36px;
+}
+
+/* 4) Search input height + font size to match pills */
+.ika-quiz-toolbar input[type="search"],
+.ika-quiz-toolbar input[type="text"]{
+  font-size: 12px;          /* match pill text */
+  line-height: 1;
+  height: 40px;             /* slightly smaller than before */
+  padding: 0 14px;
+  border-radius: 999px;
+}
+
+/* Search button height + rounded corners to match */
+.ika-quiz-toolbar button,
+.ika-quiz-toolbar .ika-search-btn,
+.ika-quiz-toolbar input[type="submit"]{
+  height: 40px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}
+
+/* 5) Mobile: keep it one “system”, then stack gracefully */
+@media (max-width: 768px){
+  .ika-quiz-toolbar{
+    margin-top: 12px;
+    margin-bottom: 14px;
+  }
+
+  .ika-quiz-toolbar input[type="search"],
+  .ika-quiz-toolbar input[type="text"],
+  .ika-quiz-toolbar button,
+  .ika-quiz-toolbar .ika-search-btn,
+  .ika-quiz-toolbar input[type="submit"]{
+    height: 38px;
+  }
+}
+
+@media (max-width: 520px){
+  /* If it must wrap, wrap cleanly: pills row first, search row second */
+  .ika-quiz-toolbar{
+    gap: 10px;
+  }
+}
+
+/* =========================================================
+   QUIZ HUB — TAXONOMY PILL HEIGHT FIX (FINAL OVERRIDE)
+   Paste at VERY END of ika_master.css
+   Targets: Elementor Taxonomy Filter items inside toolbar
+   ========================================================= */
+
+/* 1) Force the filter row to not stretch items */
+
+/* 2) Make pills shorter + more “pill” than “oval” */
+.ika-quiz-toolbar .ika-quiz-hub__filter .e-filter-item{
+  /* lock pill shape */
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  /* reduce height */
+  padding: 6px 12px !important;     /* was ~10px 14px */
+  line-height: 1 !important;
+  min-height: 32px !important;      /* keeps consistent pill height */
+  height: 32px !important;          /* hard lock (remove if you prefer flexible) */
+
+  /* keep your typography consistent */
+  font-size: 12px !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+
+  /* prevent “fat” pills from wrapping text */
+  white-space: nowrap !important;
+}
+
+/* 3) Slightly tighter on small screens */
+@media (max-width: 520px){
+  .ika-quiz-toolbar .ika-quiz-hub__filter .e-filter-item{
+    min-height: 30px !important;
+    height: 30px !important;
+    padding: 6px 10px !important;
+    font-size: 11px !important;
+  }
+}
+
+/* =========================================================
+   QUIZ HUB — TOOLBAR HEIGHT SYNC (PILLS + SEARCH)
+   Final, compact, aligned
+   ========================================================= */
+
+/* --- Shared height token (single source of truth) --- */
+:root{
+  --ika-toolbar-pill-height: 28px;
+}
+
+/* Ensure toolbar row doesn't stretch items */
+.ika-quiz-toolbar .ika-quiz-hub__filter .e-filter{
+  align-items: center !important;
+}
+
+/* =========================
+   TAXONOMY PILLS
+   ========================= */
+.ika-quiz-toolbar .ika-quiz-hub__filter .e-filter-item{
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  height: var(--ika-toolbar-pill-height) !important;
+  min-height: var(--ika-toolbar-pill-height) !important;
+  padding: 0 12px !important;
+
+  border-radius: 999px !important;
+  line-height: 1 !important;
+
+  font-size: 11px !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+
+  white-space: nowrap !important;
+}
+
+/* =========================
+   SEARCH INPUT
+   ========================= */
+.ika-quiz-toolbar input[type="search"],
+.ika-quiz-toolbar .ika-quiz-search-input{
+  height: var(--ika-toolbar-pill-height) !important;
+  min-height: var(--ika-toolbar-pill-height) !important;
+
+  padding: 0 14px !important;
+  line-height: 1 !important;
+
+  font-size: 11px !important;
+  border-radius: 999px !important;
+}
+
+/* =========================
+   SEARCH BUTTON
+   ========================= */
+.ika-quiz-toolbar .ika-quiz-search-btn,
+.ika-quiz-toolbar button[type="submit"]{
+  height: var(--ika-toolbar-pill-height) !important;
+  min-height: var(--ika-toolbar-pill-height) !important;
+
+  padding: 0 16px !important;
+  border-radius: 999px !important;
+
+  font-size: 11px !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+/* =========================
+   MOBILE TWEAK
+   ========================= */
+@media (max-width: 520px){
+  :root{
+    --ika-toolbar-pill-height: 26px;
+  }
+}
+
+/* =========================================================
+   QUIZ HUB — MOBILE STACKED TOOLBAR (FINAL)
+   ========================================================= */
+
+@media (max-width: 820px){
+
+  /* Stack toolbar vertically */
+  .ika-quiz-toolbar{
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  /* --- SEARCH ROW (TOP) --- */
+  .ika-quiz-toolbar__right{
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  .ika-quiz-toolbar__right input[type="search"]{
+    flex: 1 1 auto !important;
+    width: 100% !important;
+  }
+
+  .ika-quiz-toolbar__right button{
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+  }
+
+  /* --- PILLS ROW (BOTTOM) --- */
+  .ika-quiz-toolbar__left{
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+  }
+}
+
+/* Extra-small phones */
+@media (max-width: 520px){
+  .ika-quiz-toolbar{
+    gap: 10px !important;
+  }
+
+  .ika-quiz-toolbar__left{
+    gap: 7px !important;
   }
 }
