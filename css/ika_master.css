@@ -1,10 +1,12 @@
-/* ========================================================================== 
-   IKA MASTER CSS — CLEAN v2 (Conservative)
-   - Keeps original cascade order (no rule reordering)
-   - Removes exact duplicate blocks and repetitive comments
-   - Normalizes whitespace
-   - Adds lightweight Table of Contents (from existing headers)
+/* ==========================================================================
+   IKA MASTER CSS — CLEANED & ORGANIZED (UsersWP consolidated)
+   - Consolidates all UsersWP styling into a single section (to reduce hunting)
+   - Removes exact duplicate blocks (keeps “last-wins” duplicates intact)
+   - Normalizes whitespace / trims redundant blank lines
+   - Leaves existing cascade order intact everywhere EXCEPT UsersWP blocks
+     (late UsersWP overrides were moved into the UsersWP section to keep them together)
    ========================================================================== */
+
 
 /* --- Table of Contents (auto-generated from file headers) --- */
 /* 01. SECTION 0 — COLOR TOKENS & HELPERS (GLOBAL DESIGN SYSTEM) */
@@ -549,6 +551,1431 @@ img {
   color: #98A7B6;
 }
 
+/* =====================
+   USERSWP – ADDITIONAL OVERRIDES (merged)
+   (moved from later in file to keep UsersWP together)
+===================== */
+
+/* =========================================================
+   USERSWP – HYBRID DARK PANEL THEME (IKA)
+   Wrap shortcodes in: <div class="ika-uwp-hybrid">...</div>
+   ========================================================= */
+
+.ika-uwp-hybrid{
+  /* Page backdrop */
+  background: #F3F5F9;
+  padding: 56px 18px;
+}
+
+/* Make sure modal overlays don’t look weird on light bg */
+.ika-uwp-hybrid .modal-dialog{
+  max-width: 520px;
+}
+
+/* The “panel” (works for modals + page cards) */
+.ika-uwp-hybrid .modal-content,
+.ika-uwp-hybrid .card{
+  background: linear-gradient(180deg, #1A2740 0%, #0D131F 100%) !important;
+  border: 1px solid rgba(148, 163, 184, 0.22) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 18px 45px rgba(13, 19, 31, 0.30) !important;
+  overflow: hidden;
+}
+
+/* Modal header */
+.ika-uwp-hybrid .modal-header{
+  background: rgba(255,255,255,0.02);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+  padding: 18px 20px;
+}
+
+.ika-uwp-hybrid .modal-title,
+.ika-uwp-hybrid h1.entry-title,
+.ika-uwp-hybrid .card-title,
+.ika-uwp-hybrid h3{
+  color: #E6E8F0 !important;
+  font-family: "Montserrat", system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.ika-uwp-hybrid .card-body{
+  padding: 22px 20px 20px;
+}
+
+/* Close button (bootstrap btn-close) */
+.ika-uwp-hybrid .btn-close{
+  filter: invert(1);
+  opacity: 0.85;
+}
+.ika-uwp-hybrid .btn-close:hover{
+  opacity: 1;
+}
+
+/* Labels (UsersWP uses visually-hidden a lot; we keep UX clean) */
+.ika-uwp-hybrid .form-label,
+.ika-uwp-hybrid label{
+  color: rgba(230, 232, 240, 0.85) !important;
+}
+
+/* Inputs */
+.ika-uwp-hybrid .uwp_form input[type="text"],
+.ika-uwp-hybrid .uwp_form input[type="email"],
+.ika-uwp-hybrid .uwp_form input[type="password"],
+.ika-uwp-hybrid .uwp_form input[type="number"],
+.ika-uwp-hybrid .uwp_form input[type="url"],
+.ika-uwp-hybrid .uwp_form input[type="tel"],
+.ika-uwp-hybrid .uwp_form select,
+.ika-uwp-hybrid .uwp_form textarea{
+  background: rgba(255,255,255,0.04) !important;
+  color: #E6E8F0 !important;
+  border: 1px solid rgba(148, 163, 184, 0.22) !important;
+  border-radius: 12px !important;
+  padding: 11px 12px !important;
+  transition: border-color 0.15s ease-out, box-shadow 0.15s ease-out, background-color 0.15s ease-out;
+}
+
+.ika-uwp-hybrid .uwp_form input::placeholder,
+.ika-uwp-hybrid .uwp_form textarea::placeholder{
+  color: rgba(169, 179, 198, 0.85) !important;
+}
+
+/* Password “eye” icon group */
+.ika-uwp-hybrid .uwp-password-wrap .input-group-text{
+  background: rgba(255,255,255,0.04) !important;
+  color: rgba(230, 232, 240, 0.78) !important;
+  border: 1px solid rgba(148, 163, 184, 0.22) !important;
+  border-left: 0 !important;
+  border-radius: 0 12px 12px 0 !important;
+}
+.ika-uwp-hybrid .uwp-password-wrap .form-control{
+  border-right: 0 !important;
+  border-radius: 12px 0 0 12px !important;
+}
+
+/* Focus ring = subtle “gold” */
+.ika-uwp-hybrid .uwp_form input:focus,
+.ika-uwp-hybrid .uwp_form select:focus,
+.ika-uwp-hybrid .uwp_form textarea:focus{
+  outline: none !important;
+  border-color: rgba(255, 211, 115, 0.85) !important;
+  box-shadow: 0 0 0 2px rgba(255, 211, 115, 0.18) !important;
+  background: rgba(255,255,255,0.05) !important;
+}
+
+/* Checkboxes */
+.ika-uwp-hybrid .uwp_form .form-check-input{
+  background-color: rgba(255,255,255,0.04) !important;
+  border: 1px solid rgba(148, 163, 184, 0.22) !important;
+}
+.ika-uwp-hybrid .uwp_form .form-check-input:checked{
+  background-color: #1E5BBF !important;
+  border-color: #1E5BBF !important;
+}
+.ika-uwp-hybrid .uwp_form .form-check-label{
+  color: rgba(230, 232, 240, 0.78) !important;
+}
+
+/* Primary buttons */
+.ika-uwp-hybrid .uwp_form button[type="submit"],
+.ika-uwp-hybrid .uwp_form .uwp-button,
+.ika-uwp-hybrid .uwp_form input[type="submit"]{
+  width: 100%;
+  border-radius: 999px !important;
+  padding: 12px 22px !important;
+  font-family: "Montserrat", system-ui, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: #EAF2FF !important;
+  border: 1px solid rgba(98, 169, 242, 0.35) !important;
+  background: linear-gradient(180deg, #2B5FAE 0%, #1E5BBF 100%) !important;
+  box-shadow: 0 16px 35px rgba(13, 19, 31, 0.35) !important;
+  transition: transform 0.18s ease-out, filter 0.18s ease-out;
+}
+
+.ika-uwp-hybrid .uwp_form button[type="submit"]:hover,
+.ika-uwp-hybrid .uwp_form .uwp-button:hover,
+.ika-uwp-hybrid .uwp_form input[type="submit"]:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+/* Footer links */
+.ika-uwp-hybrid .uwp-footer-links{
+  margin-top: 14px;
+}
+.ika-uwp-hybrid .uwp-footer-links a{
+  color: rgba(230, 232, 240, 0.72) !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid transparent;
+}
+.ika-uwp-hybrid .uwp-footer-links a:hover{
+  color: #62A9F2 !important;
+}
+
+/* Social login divider */
+.ika-uwp-hybrid .uwp-social-class hr{
+  border-color: rgba(148, 163, 184, 0.18) !important;
+}
+.ika-uwp-hybrid .uwp-social-class .text-muted,
+.ika-uwp-hybrid .uwp-social-class .h5{
+  color: rgba(230, 232, 240, 0.55) !important;
+}
+
+/* ---------------------------------------------------------
+   EDIT ACCOUNT: keep avatar, hide the left nav list
+   --------------------------------------------------------- */
+.ika-uwp-hybrid .uwp-account-class .col-lg-3 ul.nav{
+  display: none !important;
+}
+.ika-uwp-hybrid .uwp-account-class .col-lg-3 .bg-light{
+  background: transparent !important;
+  padding-top: 0 !important;
+}
+.ika-uwp-hybrid .uwp-account-class .col-lg-3{
+  max-width: 280px;
+}
+
+/* Make the right-side form feel like part of the same panel */
+.ika-uwp-hybrid .uwp-account-class .col-lg-9{
+  padding-top: 0 !important;
+}
+.ika-uwp-hybrid .uwp-account-class .ps-lg-4{
+  padding-left: 24px !important;
+}
+
+/* Optional: hide the extra profile header block UsersWP adds below account */
+.ika-uwp-hybrid .uwp-profile-header{
+  display: none !important;
+}
+
+/* =========================================================
+   USERSWP AUTH MODALS – HYBRID DARK PANEL (GLOBAL)
+   UsersWP modals are injected outside Elementor containers,
+   so target .uwp-auth-modal directly.
+   ========================================================= */
+
+.uwp-auth-modal{
+  /* optional: slight dim + better contrast */
+  --ika-uwp-panel-top: #1A2740;
+  --ika-uwp-panel-bot: #0D131F;
+}
+
+/* Panel */
+.uwp-auth-modal .modal-content,
+.uwp-auth-modal .card{
+  background: linear-gradient(180deg, var(--ika-uwp-panel-top) 0%, var(--ika-uwp-panel-bot) 100%) !important;
+  border: 1px solid rgba(148, 163, 184, 0.22) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 18px 45px rgba(13, 19, 31, 0.30) !important;
+  overflow: hidden;
+}
+
+/* Header */
+.uwp-auth-modal .modal-header{
+  background: rgba(255,255,255,0.02);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+  padding: 18px 20px;
+}
+
+.uwp-auth-modal .modal-title,
+.uwp-auth-modal h1,
+.uwp-auth-modal h2,
+.uwp-auth-modal h3{
+  color: #E6E8F0 !important;
+  font-family: "Montserrat", system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Close button */
+.uwp-auth-modal .btn-close{
+  filter: invert(1);
+  opacity: 0.85;
+}
+.uwp-auth-modal .btn-close:hover{ opacity: 1; }
+
+/* Body spacing */
+.uwp-auth-modal .card-body{
+  padding: 22px 20px 20px;
+}
+
+/* Inputs */
+.uwp-auth-modal .uwp_form input[type="text"],
+.uwp-auth-modal .uwp_form input[type="email"],
+.uwp-auth-modal .uwp_form input[type="password"],
+.uwp-auth-modal .uwp_form input[type="number"],
+.uwp-auth-modal .uwp_form input[type="url"],
+.uwp-auth-modal .uwp_form input[type="tel"],
+.uwp-auth-modal .uwp_form select,
+.uwp-auth-modal .uwp_form textarea{
+  background: rgba(255,255,255,0.04) !important;
+  color: #E6E8F0 !important;
+  border: 1px solid rgba(148, 163, 184, 0.22) !important;
+  border-radius: 12px !important;
+  padding: 11px 12px !important;
+}
+
+.uwp-auth-modal .uwp_form input::placeholder,
+.uwp-auth-modal .uwp_form textarea::placeholder{
+  color: rgba(169, 179, 198, 0.85) !important;
+}
+
+/* Focus ring (gold) */
+.uwp-auth-modal .uwp_form input:focus,
+.uwp-auth-modal .uwp_form select:focus,
+.uwp-auth-modal .uwp_form textarea:focus{
+  outline: none !important;
+  border-color: rgba(255, 211, 115, 0.85) !important;
+  box-shadow: 0 0 0 2px rgba(255, 211, 115, 0.18) !important;
+  background: rgba(255,255,255,0.05) !important;
+}
+
+/* Checkbox + label */
+.uwp-auth-modal .uwp_form .form-check-input{
+  background-color: rgba(255,255,255,0.04) !important;
+  border: 1px solid rgba(148, 163, 184, 0.22) !important;
+}
+.uwp-auth-modal .uwp_form .form-check-input:checked{
+  background-color: #1E5BBF !important;
+  border-color: #1E5BBF !important;
+}
+.uwp-auth-modal .uwp_form .form-check-label{
+  color: rgba(230, 232, 240, 0.78) !important;
+}
+
+/* Buttons */
+.uwp-auth-modal .uwp_form button[type="submit"],
+.uwp-auth-modal .uwp_form .uwp-button,
+.uwp-auth-modal .uwp_form input[type="submit"],
+.uwp-auth-modal .uwp_form .btn.btn-primary{
+  width: 100%;
+  border-radius: 999px !important;
+  padding: 12px 22px !important;
+  font-family: "Montserrat", system-ui, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: #EAF2FF !important;
+  border: 1px solid rgba(98, 169, 242, 0.35) !important;
+  background: linear-gradient(180deg, #2B5FAE 0%, #1E5BBF 100%) !important;
+  box-shadow: 0 16px 35px rgba(13, 19, 31, 0.35) !important;
+}
+
+.uwp-auth-modal .uwp-footer-links a{
+  color: rgba(230, 232, 240, 0.72) !important;
+  text-decoration: none !important;
+}
+.uwp-auth-modal .uwp-footer-links a:hover{
+  color: #62A9F2 !important;
+}
+
+/* Social divider */
+.uwp-auth-modal .uwp-social-class hr{
+  border-color: rgba(148, 163, 184, 0.18) !important;
+}
+.uwp-auth-modal .uwp-social-class .text-muted,
+.uwp-auth-modal .uwp-social-class .h5{
+  color: rgba(230, 232, 240, 0.55) !important;
+}
+
+/* =========================================================
+   USERSWP MODAL HEADER – LOGO BAND + TITLE BELOW
+   ========================================================= */
+
+:root{
+  --ika-uwp-modal-header-img: url('https://iknowaviation.com/wp-content/uploads/2025/11/IKA_logo_white_300x75.svg');
+  --ika-uwp-modal-header-h: 64px;
+}
+
+/* Header layout */
+.uwp-auth-modal .modal-header{
+  position: relative;
+  display: block;
+  padding: calc(var(--ika-uwp-modal-header-h) + 18px) 20px 16px !important;
+  border-bottom: 1px solid rgba(148,163,184,0.18) !important;
+  background: transparent !important;
+}
+
+/* Logo band */
+.uwp-auth-modal .modal-header::before{
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: var(--ika-uwp-modal-header-h);
+  background-color: #0D131F;
+  background-image: var(--ika-uwp-modal-header-img);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 18px 18px 0 0;
+  border-bottom: 1px solid rgba(148,163,184,0.18);
+}
+
+/* Title below band */
+/* =========================================================
+   Modal title typography normalization
+   ========================================================= */
+.uwp-auth-modal .modal-header .modal-title{
+  font-weight: 600 !important;
+  font-size: 26px;
+  letter-spacing: -0.01em;
+}
+
+/* =========================================================
+   Modal close button – subtle dark hover (no yellow)
+   ========================================================= */
+
+.uwp-auth-modal .modal-header .btn-close{
+  background-color: transparent !important;
+  box-shadow: none !important;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  opacity: 0.9;
+  transition: background-color 0.15s ease-out, transform 0.15s ease-out;
+}
+
+/* X icon */
+.uwp-auth-modal .modal-header .btn-close::after{
+  content: "×";
+  font-size: 26px;
+  font-weight: 600;
+  color: #E6E8F0;
+}
+
+/* Hover state */
+.uwp-auth-modal .modal-header .btn-close:hover{
+  background-color: rgba(255,255,255,0.10);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   Remember Me spacing fix
+   ========================================================= */
+
+.uwp-auth-modal .uwp-remember-me .form-check{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.uwp-auth-modal .uwp-remember-me .form-check-input{
+  margin: 0 !important;
+}
+
+/* =========================================================
+   Chrome autofill – match Firefox yellow filled state
+   ========================================================= */
+
+.uwp-auth-modal .uwp_form input:-webkit-autofill,
+.uwp-auth-modal .uwp_form input:-webkit-autofill:hover,
+.uwp-auth-modal .uwp_form input:-webkit-autofill:focus{
+  -webkit-text-fill-color: #0D131F !important;
+  caret-color: #0D131F !important;
+  -webkit-box-shadow: 0 0 0 1000px #FFF7C2 inset !important;
+  box-shadow: 0 0 0 1000px #FFF7C2 inset !important;
+  border-color: rgba(255,211,115,0.85) !important;
+}
+
+/* =========================================================
+   Modal header logo sizing refinement
+   ========================================================= */
+
+.uwp-auth-modal .modal-header::before{
+  background-size: 180px auto;   /* ← adjust this value if needed */
+  background-position: center 55%;
+}
+
+/* =========================================================
+   IKA UsersWP Hybrid – Login Modal Fixes
+   - Logo header row + close button positioning
+   - Eye button styling
+   - Checkbox spacing
+   - Hide "Login via Social" placeholder (until enabled)
+========================================================= */
+
+/* 1) Header layout: logo row + title below, close stays top-right */
+.ika-uwp-hybrid .uwp-auth-modal .modal-header{
+  position: relative;
+  display: block;                 /* prevent odd flex behavior */
+  padding-top: 78px;              /* creates space for the logo row */
+}
+
+/* Add logo (no HTML changes needed) */
+.ika-uwp-hybrid .uwp-auth-modal .modal-header{
+  background-image: url("https://iknowaviation.com/wp-content/uploads/2025/11/IKA_logo_white_300x75.svg");
+  background-repeat: no-repeat;
+  background-position: center 18px;   /* logo row */
+  background-size: 180px auto;        /* <-- adjust logo size here */
+}
+
+/* Title styling (lighter weight for ALL UsersWP modals/pages using this header) */
+.ika-uwp-hybrid .uwp-auth-modal .modal-title{
+  font-weight: 600 !important;     /* slightly bold; change to 500 if you want even lighter */
+  letter-spacing: 0.2px;
+  margin-top: 10px;
+}
+
+/* 2) Close button: move into header row (top-right), no yellow, subtle hover */
+.ika-uwp-hybrid .uwp-auth-modal .modal-header .btn-close{
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  margin: 0;
+
+  border-radius: 999px;
+  background-color: transparent !important; /* removes colored circle */
+  opacity: 0.95;
+  filter: invert(1);                        /* makes default bootstrap X white on dark */
+}
+
+.ika-uwp-hybrid .uwp-auth-modal .modal-header .btn-close:focus{
+  box-shadow: 0 0 0 3px rgba(98,169,242,0.25) !important; /* blue focus ring */
+  outline: none !important;
+}
+
+/* 3) Password "eye" button: remove white block, match input styling */
+.ika-uwp-hybrid .uwp-auth-modal .uwp-password-wrap .input-group-text{
+  background: rgba(255,255,255,0.04) !important;
+  border: 1px solid rgba(148, 163, 184, 0.22) !important;
+  border-left: 0 !important;
+
+  color: #E6E8F0 !important;
+  border-radius: 0 12px 12px 0 !important;
+  padding: 0 14px !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ika-uwp-hybrid .uwp-auth-modal .uwp-password-wrap .input-group-text:hover{
+  background: rgba(255,255,255,0.07) !important;
+}
+
+/* Make the input match the shared radius when paired with the eye button */
+.ika-uwp-hybrid .uwp-auth-modal .uwp-password-wrap .input-group .form-control{
+  border-radius: 12px 0 0 12px !important;
+}
+
+/* 4) Checkbox spacing: give breathing room between box + label */
+.ika-uwp-hybrid .uwp-auth-modal .form-check{
+  display: flex;
+  align-items: center;
+  gap: 10px; /* <-- spacing between checkbox and text */
+}
+
+.ika-uwp-hybrid .uwp-auth-modal .form-check-label{
+  margin: 0 !important;
+}
+
+/* 5) Hide the "Login via Social" placeholder until you enable buttons */
+.ika-uwp-hybrid .uwp-auth-modal .uwp_widget_social_login{
+  display: none !important;
+}
+
+/************************************************************
+ IKA UsersWP Hybrid – Modal header (logo bar + close button)
+ + Password eye button styling
+*************************************************************/
+
+/* Make header act like a container for an internal “logo bar” */
+.ika-uwp-hybrid .uwp-auth-modal .modal-header{
+  position: relative;
+  padding: 0 !important;                 /* we’ll control padding per section */
+  display: block !important;             /* prevents odd flex wrapping */
+  border-bottom: 1px solid rgba(148,163,184,0.16) !important;
+  background: transparent !important;
+}
+
+/* Top logo bar */
+.ika-uwp-hybrid .uwp-auth-modal .modal-header::before{
+  content: "";
+  display: block;
+  height: 64px;                          /* tweak if you want taller/shorter */
+  background:
+    linear-gradient(180deg, rgba(13,19,31,0.72) 0%, rgba(13,19,31,0.92) 100%),
+    url("https://iknowaviation.com/wp-content/uploads/2025/11/IKA_logo_white_300x75.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto 34px;            /* <<< logo size (adjust this only) */
+}
+
+/* Title row below the logo bar */
+.ika-uwp-hybrid .uwp-auth-modal .modal-header .modal-title{
+  display: block;
+  margin: 0 !important;
+  padding: 18px 20px 16px 20px !important;
+  font-weight: 600 !important;           /* lighter than before; looks “slightly bold” */
+  letter-spacing: -0.2px;
+  color: rgba(241,245,249,0.96) !important;
+  background: rgba(98,169,242,0.10);      /* matches your “title panel” strip */
+  border-top: 1px solid rgba(148,163,184,0.12);
+}
+
+/* Close button: move into the logo bar (top-right) */
+.ika-uwp-hybrid .uwp-auth-modal .modal-header .btn-close{
+  position: absolute !important;
+  top: 12px;
+  right: 12px;
+  margin: 0 !important;
+
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+
+  background-color: transparent !important; /* no yellow */
+  box-shadow: none !important;
+  opacity: 0.9;
+
+  /* Bootstrap X uses an SVG mask; invert helps on dark */
+  filter: invert(1);
+}
+
+/* Close hover: subtle dark hover ring */
+.ika-uwp-hybrid .uwp-auth-modal .modal-header .btn-close:hover{
+  background-color: rgba(255,255,255,0.10) !important;
+  opacity: 1;
+}
+
+/* Close focus: accessible but not ugly */
+.ika-uwp-hybrid .uwp-auth-modal .modal-header .btn-close:focus{
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(98,169,242,0.35) !important;
+}
+
+/************************************************************
+ Password “eye” button (Bootstrap input-group-text)
+*************************************************************/
+
+/* The eye wrapper is an .input-group-text in your HTML */
+.ika-uwp-hybrid .uwp-auth-modal .input-group-text{
+  background: rgba(255,255,255,0.06) !important;
+  color: rgba(241,245,249,0.92) !important;
+  border: 1px solid rgba(148,163,184,0.22) !important;
+
+  border-radius: 14px !important;
+  padding: 0 14px !important;
+
+  /* Make it feel “button-like” */
+  cursor: pointer;
+  transition: background-color 150ms ease, transform 150ms ease, opacity 150ms ease;
+}
+
+/* If it sits flush against the input, this keeps it visually joined */
+.ika-uwp-hybrid .uwp-auth-modal .input-group-text.top-0.end-0{
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+/* Hover/focus states */
+.ika-uwp-hybrid .uwp-auth-modal .input-group-text:hover{
+  background: rgba(255,255,255,0.10) !important;
+}
+.ika-uwp-hybrid .uwp-auth-modal .input-group-text:active{
+  transform: translateY(1px);
+}
+
+/* Eye icon itself (FontAwesome <i>) */
+.ika-uwp-hybrid .uwp-auth-modal .input-group-text i{
+  color: rgba(241,245,249,0.88) !important;
+  font-size: 18px;
+}
+
+/* =========================================================
+   UsersWP Auth Modal — FINAL OVERRIDES (place at VERY bottom)
+   Fixes:
+   - Close button pinned top-right in logo bar
+   - Removes stray custom "×" added by earlier CSS
+   - Creates a clean logo bar + title row
+========================================================= */
+
+/* Make header a stable positioning context */
+.uwp-auth-modal .modal-header{
+  position: relative !important;
+  display: block !important;
+  padding: 0 !important;
+  border-bottom: 1px solid rgba(148,163,184,0.16) !important;
+  background: transparent !important;
+}
+
+/* Logo bar (top strip) */
+.uwp-auth-modal .modal-header{
+  /* logo strip height */
+  --ika-logo-bar-h: 64px;
+
+  /* Background = dark strip + centered SVG logo */
+  background-image:
+    linear-gradient(180deg, rgba(13,19,31,0.70) 0%, rgba(13,19,31,0.92) 100%),
+    url("https://iknowaviation.com/wp-content/uploads/2025/11/IKA_logo_white_300x75.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: center center, center 18px;
+  background-size: 100% var(--ika-logo-bar-h), auto 34px; /* <-- logo size here */
+}
+
+/* Title row lives below the logo bar */
+.uwp-auth-modal .modal-header .modal-title{
+  display: block !important;
+  margin: 0 !important;
+  padding: calc(var(--ika-logo-bar-h) + 16px) 20px 16px 20px !important;
+  font-weight: 600 !important;  /* change to 500 if you want lighter */
+  color: rgba(241,245,249,0.96) !important;
+  background: rgba(98,169,242,0.10) !important;
+  border-top: 1px solid rgba(148,163,184,0.12) !important;
+}
+
+/* =========================================================
+   UsersWP password eye button — remove white background
+========================================================= */
+
+.uwp-auth-modal .uwp-password-wrap .input-group-text.top-0.end-0{
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid rgba(148,163,184,0.22) !important;
+  border-left: 0 !important;
+
+  color: rgba(241,245,249,0.90) !important;
+  border-radius: 0 14px 14px 0 !important;
+
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+}
+
+.uwp-auth-modal .uwp-password-wrap .input-group-text.top-0.end-0:hover{
+  background: rgba(255,255,255,0.10) !important;
+}
+
+/* Make the input and button visually “one pill” */
+.uwp-auth-modal .uwp-password-wrap .input-group .form-control{
+  border-radius: 14px 0 0 14px !important;
+}
+
+/* Icon color (FontAwesome <i>) */
+.uwp-auth-modal .uwp-password-wrap .input-group-text.top-0.end-0 i{
+  color: rgba(241,245,249,0.88) !important;
+  font-size: 18px !important;
+}
+
+/* =========================================================
+   IKA – USERSWP AUTH HEADER PATTERN (MODALS + PAGES)
+   Applies the same header system everywhere:
+   - Logo bar (dark)
+   - Title strip (slightly lighter navy)
+   - Body stays dark panel
+========================================================= */
+
+:root{
+  --ika-uwp-logo: url("https://iknowaviation.com/wp-content/uploads/2025/11/IKA_logo_white_300x75.svg");
+  --ika-uwp-logo-bar-h: 64px;
+  --ika-uwp-logo-size-h: 34px; /* logo height inside bar */
+  --ika-uwp-title-bg: rgba(98,169,242,0.10);
+  --ika-uwp-border: rgba(148,163,184,0.16);
+}
+
+/* ---------------------------------------------------------
+   A) MODALS (Login/Register/Forgot/Reset)
+--------------------------------------------------------- */
+
+.uwp-auth-modal .modal-header{
+  position: relative !important;
+  display: block !important;
+  padding: 0 !important;
+  border-bottom: 1px solid var(--ika-uwp-border) !important;
+  background: transparent !important;
+
+  /* Dark logo bar + centered logo */
+  background-image:
+    linear-gradient(180deg, rgba(13,19,31,0.70) 0%, rgba(13,19,31,0.92) 100%),
+    var(--ika-uwp-logo);
+  background-repeat: no-repeat, no-repeat;
+  background-position: center center, center 18px;
+  background-size: 100% var(--ika-uwp-logo-bar-h), auto var(--ika-uwp-logo-size-h);
+}
+
+/* Title strip below logo bar */
+.uwp-auth-modal .modal-header .modal-title{
+  display: block !important;
+  margin: 0 !important;
+  padding: calc(var(--ika-uwp-logo-bar-h) + 16px) 20px 16px 20px !important;
+  font-weight: 600 !important;
+  color: rgba(241,245,249,0.96) !important;
+  background: var(--ika-uwp-title-bg) !important;
+  border-top: 1px solid rgba(148,163,184,0.12) !important;
+}
+
+/* Close X pinned top-right in logo bar */
+.uwp-auth-modal .modal-header .btn-close{
+  position: absolute !important;
+  top: 12px !important;
+  right: 12px !important;
+  z-index: 9999 !important;
+  width: 42px !important;
+  height: 42px !important;
+  margin: 0 !important;
+  border-radius: 999px !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  opacity: 0.92 !important;
+  filter: invert(1) !important;
+}
+
+/* Kill any legacy injected "×" from older CSS */
+.uwp-auth-modal .modal-header .btn-close::after{
+  content: none !important;
+}
+
+.uwp-auth-modal .modal-header .btn-close:hover{
+  background-color: rgba(255,255,255,0.10) !important;
+  opacity: 1 !important;
+}
+
+/* ---------------------------------------------------------
+   B) FULL PAGES (Edit Account / Change Password / Register page)
+   Wrap shortcode/page content in: .ika-uwp-hybrid
+--------------------------------------------------------- */
+
+/* Add the same logo bar to the top of the first UsersWP card on the page */
+.ika-uwp-hybrid .uwp_form .card,
+.ika-uwp-hybrid .uwp-account-class .card,
+.ika-uwp-hybrid .uwp-change-password-class .card,
+.ika-uwp-hybrid .uwp-register-class .card,
+.ika-uwp-hybrid .uwp-forgot-class .card{
+  position: relative;
+  overflow: hidden;
+}
+
+/* Logo bar on page cards */
+.ika-uwp-hybrid .uwp_form .card::before,
+.ika-uwp-hybrid .uwp-account-class .card::before,
+.ika-uwp-hybrid .uwp-change-password-class .card::before,
+.ika-uwp-hybrid .uwp-register-class .card::before,
+.ika-uwp-hybrid .uwp-forgot-class .card::before{
+  content: "";
+  display: block;
+  height: var(--ika-uwp-logo-bar-h);
+  background-image:
+    linear-gradient(180deg, rgba(13,19,31,0.70) 0%, rgba(13,19,31,0.92) 100%),
+    var(--ika-uwp-logo);
+  background-repeat: no-repeat, no-repeat;
+  background-position: center center, center;
+  background-size: 100% 100%, auto var(--ika-uwp-logo-size-h);
+  border-bottom: 1px solid var(--ika-uwp-border);
+}
+
+/* Title strip for page headers:
+   UsersWP page templates usually have an h1/h2/h3 near the top.
+   We style the first visible heading inside the card body. */
+.ika-uwp-hybrid .uwp_form .card .card-body > h1:first-child,
+.ika-uwp-hybrid .uwp_form .card .card-body > h2:first-child,
+.ika-uwp-hybrid .uwp_form .card .card-body > h3:first-child,
+.ika-uwp-hybrid .uwp-account-class .card .card-body > h1:first-child,
+.ika-uwp-hybrid .uwp-account-class .card .card-body > h2:first-child,
+.ika-uwp-hybrid .uwp-account-class .card .card-body > h3:first-child{
+  margin: 0 !important;
+  padding: 18px 20px 16px 20px !important;
+  background: var(--ika-uwp-title-bg) !important;
+  border-bottom: 1px solid rgba(148,163,184,0.12) !important;
+  font-weight: 600 !important;
+  color: rgba(241,245,249,0.96) !important;
+}
+
+/* If UsersWP doesn’t output a heading element, this still gives
+   the body a little breathing room below the logo bar. */
+.ika-uwp-hybrid .uwp_form .card .card-body,
+.ika-uwp-hybrid .uwp-account-class .card .card-body{
+  padding-top: 18px;
+}
+
+/* ============================================================
+   UsersWP — Hybrid Dark Panel (NON-MODAL account pages)
+   Targets: Edit Account, Change Password, Notifications, Privacy
+   Wrapper: .ika-uwp-hybrid (Elementor container around shortcode)
+   ============================================================ */
+
+.ika-uwp-hybrid .uwp_page{
+  /* Page background (match hybrid system) */
+  min-height: 70vh;
+  padding: clamp(18px, 3vw, 44px) 14px;
+  background: radial-gradient(1200px 700px at 50% 10%, rgba(98,169,242,.18) 0%, rgba(13,19,31,0) 60%),
+              linear-gradient(180deg, #0D131F 0%, #0B111C 100%);
+}
+
+/* Kill Bootstrap "light" page look inside UsersWP layout */
+.ika-uwp-hybrid .uwp_page .bg-light{
+  background: transparent !important;
+}
+.ika-uwp-hybrid .uwp_page .container{
+  max-width: 1100px;
+}
+.ika-uwp-hybrid .uwp_page .pt-5{
+  padding-top: 0 !important;
+}
+
+/* Make the two columns behave like "cards" on hybrid background */
+.ika-uwp-hybrid .uwp_page .row.height-auto{
+  gap: 18px;
+}
+
+/* Left column: keep avatar, hide the rest of the sidebar */
+.ika-uwp-hybrid .uwp_page .col-lg-3 .navbar-light{
+  background: linear-gradient(180deg, rgba(26,39,64,.72) 0%, rgba(13,19,31,.88) 100%);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 18px;
+  box-shadow: 0 18px 50px rgba(0,0,0,.45);
+  overflow: hidden;
+}
+
+/* Remove any "header bar" feel on the avatar block (we only want the avatar) */
+.ika-uwp-hybrid .uwp_page .col-lg-3 .navbar-light::before{
+  content: none !important;
+}
+
+/* Hide the left nav list (Edit Account / Change Password / etc.) */
+.ika-uwp-hybrid .uwp_page .col-lg-3 ul.nav,
+.ika-uwp-hybrid .uwp_page .col-lg-3 .nav,
+.ika-uwp-hybrid .uwp_page .col-lg-3 .uwp-account-nav,
+.ika-uwp-hybrid .uwp_page .col-lg-3 .uwp_widgets .nav{
+  display: none !important;
+}
+
+/* Tighten avatar area so it looks intentional */
+.ika-uwp-hybrid .uwp_page .col-lg-3 .d-flex.justify-content-center{
+  padding: 18px 12px 18px;
+}
+.ika-uwp-hybrid .uwp_page .col-lg-3 .card{
+  margin: 0 !important;
+}
+.ika-uwp-hybrid .uwp_page .col-lg-3 img{
+  border-radius: 999px;
+}
+
+/* Right column becomes the main panel */
+.ika-uwp-hybrid .uwp_page .col-lg-9 .ps-lg-4{
+  position: relative;
+  background: linear-gradient(180deg, rgba(26,39,64,.70) 0%, rgba(13,19,31,.92) 100%);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 22px;
+  box-shadow: 0 18px 60px rgba(0,0,0,.55);
+  padding: 110px clamp(16px, 2.4vw, 28px) 26px !important;
+  overflow: hidden;
+}
+
+/* Header strip + centered logo (same pattern as modal header) */
+.ika-uwp-hybrid .uwp_page .col-lg-9 .ps-lg-4::before{
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 72px;
+  background:
+    url("https://iknowaviation.com/wp-content/uploads/2025/11/IKA_logo_white_300x75.svg") center / 170px auto no-repeat,
+    linear-gradient(180deg, rgba(13,19,31,.92) 0%, rgba(13,19,31,.70) 100%);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+/* Title style (less heavy than before, applies across UsersWP pages) */
+.ika-uwp-hybrid .uwp_page .col-lg-9 .ps-lg-4 > h3{
+  color: rgba(255,255,255,.92);
+  font-weight: 600; /* slightly bold, not heavy */
+  letter-spacing: .2px;
+  margin: 0 0 18px !important;
+}
+
+/* Form elements inside the right panel */
+.ika-uwp-hybrid .uwp_page .col-lg-9 .uwp_form input[type="text"],
+.ika-uwp-hybrid .uwp_page .col-lg-9 .uwp_form input[type="email"],
+.ika-uwp-hybrid .uwp_page .col-lg-9 .uwp_form input[type="password"],
+.ika-uwp-hybrid .uwp_page .col-lg-9 .uwp_form select,
+.ika-uwp-hybrid .uwp_page .col-lg-9 .uwp_form textarea{
+  background: rgba(9,14,23,.72);
+  color: rgba(255,255,255,.92);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px;
+}
+
+/* Focus / filled (keeps your “yellow filled” vibe consistent) */
+.ika-uwp-hybrid .uwp_page .col-lg-9 .uwp_form input:focus,
+.ika-uwp-hybrid .uwp_page .col-lg-9 .uwp_form select:focus,
+.ika-uwp-hybrid .uwp_page .col-lg-9 .uwp_form textarea:focus{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255,211,115,.18);
+  border-color: rgba(255,211,115,.55);
+}
+.ika-uwp-hybrid .uwp_page .col-lg-9 .uwp_form input:not(:placeholder-shown){
+  background: rgba(255,211,115,.12);
+}
+
+/* Buttons */
+.ika-uwp-hybrid .uwp_page .col-lg-9 .uwp_form button,
+.ika-uwp-hybrid .uwp_page .col-lg-9 .uwp_form input[type="submit"],
+.ika-uwp-hybrid .uwp_page .col-lg-9 .uwp_form .btn{
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 14px 36px rgba(0,0,0,.35);
+}
+
+/* Mobile: stack nicely */
+@media (max-width: 991px){
+  .ika-uwp-hybrid .uwp_page .row.height-auto{
+    gap: 14px;
+  }
+  .ika-uwp-hybrid .uwp_page .col-lg-9 .ps-lg-4{
+    padding-top: 102px !important;
+  }
+}
+
+/* =========================================================
+   UsersWP Account Page Fixes (non-modal)
+   - Remove duplicate logo header strip on page panels
+   - Force 2-column layout (avatar left, form right)
+   - Hide avatar upload/camera button
+   - Remove any header/watermark effect inside avatar card
+   ========================================================= */
+
+/* 1) Force the row + cols to behave like Bootstrap grid */
+.ika-uwp-hybrid .uwp-account-class .uwp_page .row.height-auto{
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+}
+
+.ika-uwp-hybrid .uwp-account-class .uwp_page .col-lg-3,
+.ika-uwp-hybrid .uwp-account-class .uwp_page .col-lg-9{
+  float: none !important;
+  display: block !important;
+}
+
+@media (min-width: 992px){
+  .ika-uwp-hybrid .uwp-account-class .uwp_page .col-lg-3{
+    flex: 0 0 25% !important;
+    max-width: 25% !important;
+  }
+  .ika-uwp-hybrid .uwp-account-class .uwp_page .col-lg-9{
+    flex: 0 0 75% !important;
+    max-width: 75% !important;
+  }
+}
+
+/* 2) Remove duplicate logo header strip on NON-MODAL account pages */
+.ika-uwp-hybrid .uwp-account-class .uwp_page .col-lg-9 .ps-lg-4::before{
+  content: none !important;
+}
+
+/* Keep the nice title strip style but remove extra top padding reserved for the logo bar */
+.ika-uwp-hybrid .uwp-account-class .uwp_page .col-lg-9 .ps-lg-4{
+  padding-top: 26px !important; /* was large because of the logo bar */
+}
+
+/* 4) Remove any “header / watermark” effect inside the avatar panel */
+.ika-uwp-hybrid .uwp-account-class .col-lg-3 .navbar-light::before,
+.ika-uwp-hybrid .uwp-account-class .col-lg-3 .navbar-light::after{
+  content: none !important;
+  background: none !important;
+}
+
+/* Optional: tighten avatar panel spacing so it doesn’t look like a tall empty card */
+.ika-uwp-hybrid .uwp-account-class .col-lg-3 .bg-light.pt-5{
+  padding-top: 18px !important;
+  background: transparent !important;
+}
+
+.ika-uwp-hybrid .uwp-account-class .col-lg-3 .d-flex.justify-content-center.flex-column{
+  padding: 16px 12px 12px !important;
+}
+
+/* =========================================================
+   USERSWP ACCOUNT PAGE — FORCE 2-COLUMN LAYOUT (LG+)
+   ========================================================= */
+
+.ika-uwp-hybrid .uwp-account-class .uwp_page .container > .row.height-auto{
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  gap: 22px; /* spacing between avatar + form panels */
+}
+
+/* Make columns act like real flex columns even if other CSS breaks Bootstrap */
+.ika-uwp-hybrid .uwp-account-class .uwp_page .container > .row.height-auto > .col-lg-3,
+.ika-uwp-hybrid .uwp-account-class .uwp_page .container > .row.height-auto > .col-lg-9{
+  width: auto !important;
+  max-width: none !important;
+}
+
+@media (min-width: 992px){
+  .ika-uwp-hybrid .uwp-account-class .uwp_page .container > .row.height-auto > .col-lg-3{
+    flex: 0 0 280px !important;  /* avatar panel fixed-ish width */
+    max-width: 280px !important;
+  }
+  .ika-uwp-hybrid .uwp-account-class .uwp_page .container > .row.height-auto > .col-lg-9{
+    flex: 1 1 auto !important;   /* form takes remaining space */
+    min-width: 0 !important;
+  }
+}
+
+/* Prevent alt text from showing as visible text */
+.ika-uwp-hybrid .uwp-account-class img.ika-level-avatar{
+  color: transparent !important;   /* hides alt text if it gets rendered */
+}
+
+/* If any tooltip/label text “User avatar” exists above/beside it, hide it */
+.ika-uwp-hybrid .uwp-account-class .col-lg-3 [class*="avatar"],
+.ika-uwp-hybrid .uwp-account-class .col-lg-3 .text-muted{
+  /* safe: only affects sidebar microtext */
+}
+
+/* =========================================================
+   ROUND THE OUTER DARK SECTION (Elementor container wrapper)
+   ========================================================= */
+
+.ika-uwp-hybrid{
+  border-radius: 26px;
+  overflow: hidden; /* required so the background corners clip */
+}
+
+/* =========================================================
+   USERSWP EDIT ACCOUNT — GUARANTEED TARGETS
+   (Bypass Elementor container guessing)
+========================================================= */
+
+/* 1) Rounded corners on the REAL dark section: the UsersWP page wrapper */
+.ika-uwp-hybrid .uwp_page{
+  border-radius: 26px !important;
+  overflow: hidden !important;
+}
+
+/* If the dark background is on the bsui wrapper inside uwp_page */
+.ika-uwp-hybrid .uwp_page .bsui{
+  border-radius: 26px !important;
+  overflow: hidden !important;
+}
+
+/* 2) Remove ANY header/logo strip from the avatar panel */
+.ika-uwp-hybrid .uwp_page .col-lg-3 .navbar-light::before,
+.ika-uwp-hybrid .uwp_page .col-lg-3 .navbar-light::after{
+  content: none !important;
+  background: none !important;
+}
+
+/* 3) Make avatar + form panels align (equal height) */
+.ika-uwp-hybrid .uwp_page .row.height-auto{
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+.ika-uwp-hybrid .uwp_page .row.height-auto > .col-lg-3,
+.ika-uwp-hybrid .uwp_page .row.height-auto > .col-lg-9{
+  display: flex !important;
+}
+
+.ika-uwp-hybrid .uwp_page .row.height-auto > .col-lg-3 > *,
+.ika-uwp-hybrid .uwp_page .row.height-auto > .col-lg-9 > *{
+  flex: 1 1 auto !important;
+}
+
+/* =========================================================
+   EDIT ACCOUNT — AVATAR PANEL FIX (remove logo strip, keep avatar)
+   ========================================================= */
+
+/* 1) REMOVE the header/logo strip that is being applied to the LEFT avatar panel */
+.ika-uwp-hybrid .uwp-account-class .uwp_page .col-lg-3 .navbar-light::before,
+.ika-uwp-hybrid .uwp-account-class .uwp_page .col-lg-3 .navbar-light::after{
+  content: none !important;
+  background: none !important;
+  display: none !important;
+}
+
+/* Also remove any logo-strip applied to the first .card inside the left column */
+.ika-uwp-hybrid .uwp-account-class .uwp_page .col-lg-3 .card::before,
+.ika-uwp-hybrid .uwp-account-class .uwp_page .col-lg-3 .card::after{
+  content: none !important;
+  background: none !important;
+  display: none !important;
+}
+
+/* 2) RESTORE the avatar wrapper to a simple, non-clipping container */
+.ika-uwp-hybrid .uwp-account-class .ika-level-avatar-wrapper{
+  display: inline-block !important;
+  width: auto !important;
+  height: auto !important;
+  overflow: visible !important;
+  background: none !important;
+  background-image: none !important;
+}
+
+/* 3) Ensure avatar image stays visible and circular */
+.ika-uwp-hybrid .uwp-account-class img.ika-level-avatar{
+  display: inline-block !important;
+  width: 150px !important;
+  height: 150px !important;
+  border-radius: 999px !important;
+  object-fit: cover !important;
+}
+
+/* 4) Hide the camera/upload button */
+.ika-uwp-hybrid .uwp-account-class a.uwp-banner-change-icon{
+  display: none !important;
+}
+
+/* ===== EDIT ACCOUNT: final spacing + equal height ===== */
+
+/* 1) breathing room above avatar circle */
+.ika-uwp-hybrid .uwp-account-class .col-lg-3 .ika-level-avatar-wrapper{
+  margin-top: 14px !important;
+}
+
+/* 2) equal-height avatar + form panels */
+.ika-uwp-hybrid .uwp-account-class .uwp_page .row.height-auto{
+  display: flex !important;
+  align-items: stretch !important;
+}
+.ika-uwp-hybrid .uwp-account-class .uwp_page .row.height-auto > .col-lg-3,
+.ika-uwp-hybrid .uwp-account-class .uwp_page .row.height-auto > .col-lg-9{
+  display: flex !important;
+}
+.ika-uwp-hybrid .uwp-account-class .uwp_page .row.height-auto > .col-lg-3 > .navbar-light,
+.ika-uwp-hybrid .uwp-account-class .uwp_page .row.height-auto > .col-lg-9 > .ps-lg-4{
+  flex: 1 1 auto !important;
+}
+
+/* =========================================================
+   UsersWP – Hybrid Dark Panel: NON-MODAL pages (no logo bar)
+   Edit Account + Change Password
+========================================================= */
+
+/* 1) Main shell panel (keep your big rounded dark panel) */
+.ika-uwp-hybrid .uwp-account-class .uwp_page > .container,
+.ika-uwp-hybrid .uwp-change-password-class .uwp_page > .container,
+.ika-uwp-hybrid .uwp_page.uwp_account_page > .container{
+  position: relative;
+  border-radius: 44px;
+  overflow: hidden; /* lets the title strip clip to rounded corners */
+  background: radial-gradient(1200px 600px at 70% 20%, rgba(98,169,242,.14), transparent 55%),
+              linear-gradient(180deg, rgba(13,19,31,.92), rgba(13,19,31,.88));
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 22px 70px rgba(0,0,0,.45);
+  padding: 0; /* header strip will be flush */
+}
+
+/* 2) IMPORTANT: kill any “logo bar” that may have been added previously */
+.ika-uwp-hybrid .uwp-account-class .uwp_page > .container::before,
+.ika-uwp-hybrid .uwp-change-password-class .uwp_page > .container::before,
+.ika-uwp-hybrid .uwp_page.uwp_account_page > .container::before{
+  content: none !important;
+  display: none !important;
+}
+
+/* 3) Title strip becomes the top header (same lighter blue as modal title area) */
+.ika-uwp-hybrid .uwp-account-class .uwp_page h1,
+.ika-uwp-hybrid .uwp-change-password-class .uwp_page h1,
+.ika-uwp-hybrid .uwp_page.uwp_account_page h1{
+  margin: 0 !important;
+  padding: 30px 44px !important;
+  background: rgba(26,39,64,.62); /* lighter header strip like modal */
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  color: rgba(255,255,255,.92);
+  font-weight: 600;
+  letter-spacing: .2px;
+
+  /* make it feel like the “top bar” */
+  border-top-left-radius: 44px;
+  border-top-right-radius: 44px;
+}
+
+/* 4) Body padding inside the panel (consistent across account + change password) */
+.ika-uwp-hybrid .uwp-account-class .uwp_page > .container > .row,
+.ika-uwp-hybrid .uwp-change-password-class .uwp_page > .container > .row,
+.ika-uwp-hybrid .uwp_page.uwp_account_page > .container > .row{
+  padding: 34px 34px 42px;
+}
+
+/* 5) Standardize “card/panel” look inside non-modal pages */
+.ika-uwp-hybrid .uwp-account-class .uwp_page .card,
+.ika-uwp-hybrid .uwp-change-password-class .uwp_page .card,
+.ika-uwp-hybrid .uwp_page.uwp_account_page .card{
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 26px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.04);
+}
+
+/* 6) If UsersWP outputs a duplicate title element, hide it */
+.ika-uwp-hybrid .uwp-account-class .uwp_page .uwp_page_title,
+.ika-uwp-hybrid .uwp-change-password-class .uwp_page .uwp_page_title{
+  display: none !important;
+}
+
+/* =========================================================
+   UsersWP (Hybrid) — Modal Alerts (Error / Success)
+   Targets: .modal-error .alert.alert-danger / .alert.alert-success
+========================================================= */
+
+.ika-uwp-hybrid .modal-error {
+  margin: 0 0 18px 0;
+}
+
+/* Base alert look (both success + error) */
+.ika-uwp-hybrid .modal-error .alert {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  padding: 14px 16px;
+  border-radius: 14px;
+
+  line-height: 1.35;
+  font-size: 16px;
+
+  background: rgba(13, 19, 31, 0.55); /* dark glass */
+  border: 1px solid rgba(98, 169, 242, 0.18);
+  color: rgba(255, 255, 255, 0.90);
+
+  box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* icon */
+.ika-uwp-hybrid .modal-error .alert i.fas,
+.ika-uwp-hybrid .modal-error .alert i.far {
+  flex: 0 0 auto;
+  margin-top: 2px;
+
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+/* strong + spacing */
+.ika-uwp-hybrid .modal-error .alert strong {
+  font-weight: 700;
+}
+.ika-uwp-hybrid .modal-error .alert > * {
+  max-width: 100%;
+}
+
+/* Links inside alert */
+.ika-uwp-hybrid .modal-error .alert a {
+  color: #62A9F2;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+}
+.ika-uwp-hybrid .modal-error .alert a:hover {
+  color: #FFD373;
+}
+
+/* -------------------------
+   ERROR (danger)
+-------------------------- */
+.ika-uwp-hybrid .modal-error .alert.alert-danger {
+  background: rgba(140, 35, 45, 0.18);
+  border-color: rgba(255, 90, 102, 0.35);
+  color: rgba(255, 255, 255, 0.92);
+}
+.ika-uwp-hybrid .modal-error .alert.alert-danger i {
+  background: rgba(255, 90, 102, 0.18);
+  color: rgba(255, 170, 176, 0.95);
+}
+
+/* Make the “Lost your password?” line not collide */
+.ika-uwp-hybrid .modal-error .alert.alert-danger a {
+  display: inline-block;
+  margin-top: 6px;
+}
+
+/* -------------------------
+   SUCCESS
+-------------------------- */
+.ika-uwp-hybrid .modal-error .alert.alert-success {
+  background: rgba(38, 160, 90, 0.16);
+  border-color: rgba(80, 220, 140, 0.35);
+  color: rgba(255, 255, 255, 0.92);
+}
+.ika-uwp-hybrid .modal-error .alert.alert-success i {
+  background: rgba(80, 220, 140, 0.16);
+  color: rgba(170, 255, 210, 0.95);
+}
+
+/* If UsersWP injects a close button inside alerts in the future */
+.ika-uwp-hybrid .modal-error .alert .btn-close {
+  filter: invert(1);
+  opacity: 0.75;
+}
+.ika-uwp-hybrid .modal-error .alert .btn-close:hover {
+  opacity: 1;
+}
+
+/* =========================================================
+   UsersWP Login Modal — FORCE alert spacing + layout
+   (unscoped so it will apply even if wrapper classes differ)
+========================================================= */
+
+/* The exact wrapper you showed: .mb-3 > .modal-error > .alert */
+.modal-error,
+.modal-success{
+  display:block !important;
+  height:auto !important;
+  margin: 0 0 18px 0 !important;
+  padding: 0 !important;
+}
+
+.modal-error .alert,
+.modal-success .alert{
+  /* kill any weird inherited layout */
+  position: relative !important;
+  display: block !important;
+  float: none !important;
+  clear: both !important;
+
+  /* fix the “text smashing” */
+  white-space: normal !important;
+  word-break: break-word !important;
+  line-height: 1.35 !important;
+
+  /* consistent card-like spacing */
+  margin: 0 !important;
+  padding: 16px 18px !important;
+  border-radius: 14px !important;
+}
+
+/* Make the icon NOT affect line layout weirdly */
+.modal-error .alert i,
+.modal-success .alert i{
+  position: static !important;
+  display: inline-block !important;
+  margin: 0 10px 0 0 !important;
+  line-height: 1 !important;
+  vertical-align: middle !important;
+}
+
+/* Put the “Lost your password?” link on its own line */
+.modal-error .alert a,
+.modal-success .alert a{
+  display: inline-block !important;
+  margin-top: 10px !important;
+  text-decoration-thickness: 2px;
+}
+
+/* Your HTML has TWO nested .mb-3 wrappers; tighten and normalize */
+.card-body > .mb-3,
+.card-body > .mb-3.mb-3{
+  margin-bottom: 18px !important;
+}
 /* =========================================================
    IKA – XP LEADERBOARD
    ========================================================= */
